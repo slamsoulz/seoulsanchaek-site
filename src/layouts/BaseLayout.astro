@@ -88,5 +88,11 @@ const structuredData = {
         <p>&copy; {new Date().getFullYear()} Seoulsanchaek. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      if (/[#&](invite_token|recovery_token|confirmation_token|email_change_token)=/.test(window.location.hash) && !window.location.pathname.startsWith('/admin')) {
+        window.location.replace('/admin/' + window.location.hash);
+      }
+    </script>
   </body>
 </html>
