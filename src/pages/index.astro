@@ -60,7 +60,7 @@ const reviews = (await getReviews()).slice(0, 5);
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {reviews.map((r) => (
           <a href="/reviews" class="block border border-stone-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
-            <img src={r.src} alt={`Message from ${r.label}`} class="w-full aspect-[3/4] object-cover" />
+            <img src={r.src} alt="Guest review" class="w-full aspect-[3/4] object-cover" />
           </a>
         ))}
       </div>
