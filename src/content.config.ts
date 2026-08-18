@@ -23,7 +23,9 @@ const reviews = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/reviews' }),
   schema: z.object({
     label: z.string(),
-    date: z.string(),
+    date: z.union([z.string(), z.date()]).transform((v) =>
+      v instanceof Date ? v.toISOString().slice(0, 10) : v
+    ),
     image: z.string(),
   }),
 });
