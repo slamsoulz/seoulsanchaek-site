@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://seoulsanchaek.netlify.app/sitemap-index.xml
+Sitemap: https://seoulsanchaek-tour.netlify.app/sitemap-index.xml
