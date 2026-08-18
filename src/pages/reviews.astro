@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getReviews } from '../lib/reviews';
+
+const reviews = await getReviews();
+---
+
+<BaseLayout title="Reviews" description="What guests have said.">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <h1 class="text-3xl font-bold mb-2">What guests have said</h1>
+    <p class="text-stone-500 mb-10 text-sm">
+      Real messages from guests, shared as sent.
+    </p>
+
+    {reviews.length > 0 ? (
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {reviews.map((r) => (
+          <div class="border border-stone-200 rounded-xl overflow-hidden bg-white">
+            <img src={r.src} alt={`Message from ${r.label}`} class="w-full" />
+            <p class="text-xs text-stone-500 px-3 py-2">{r.label} · {r.date}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p class="text-stone-500">Reviews are coming soon.</p>
+    )}
+
+    <div class="mt-12 bg-teal-50 border border-teal-100 rounded-2xl p-6 text-center">
+      <p class="text-teal-800 font-medium mb-1">Ready to see it for yourself?</p>
+      <a href="/contact" class="text-sm text-teal-700 hover:underline">Contact me now →</a>
+    </div>
+  </section>
+</BaseLayout>

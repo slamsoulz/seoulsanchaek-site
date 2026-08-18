@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/reviews"
+public_folder: "/images/reviews"
+
+collections:
+  - name: "reviews"
+    label: "Reviews"
+    label_singular: "Review"
+    folder: "src/content/reviews"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.label}}"
+    fields:
+      - { label: "Guest", name: "label", widget: "string", hint: "Name or initials, e.g. S. (Germany)" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Screenshot", name: "image", widget: "image" }
+
+  - name: "tours"
+    label: "Tours"
+    label_singular: "Tour"
+    folder: "src/content/tours"
+    create: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["car", "walking", "airport"] }
+      - { label: "Category Label", name: "categoryLabel", widget: "string" }
+      - { label: "Order", name: "order", widget: "number" }
+      - { label: "Group Size", name: "capacity", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - { label: "Highlight", name: "highlight", widget: "string" }
+      - label: "Price Tiers"
+        name: "tiers"
+        widget: "list"
+        fields:
+          - { label: "Tier Name", name: "label", widget: "string" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Price", name: "price", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

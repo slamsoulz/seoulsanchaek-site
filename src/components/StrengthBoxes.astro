@@ -1,0 +1,28 @@
+---
+const strengths = [
+  {
+    title: 'From Fixing to Touring, One Person All the Way',
+    body: 'The same field coordination skills I built working with international news and documentary crews now go straight into your private tour.',
+  },
+  {
+    title: 'No Middleman, Priced From the Floor',
+    body: 'Rates start at real cost plus a minimal margin — nothing extra tacked on in between.',
+  },
+  {
+    title: 'I Know the Neighborhoods, English Comes Standard',
+    body: 'Years living abroad and guiding in fluent English mean routes you won’t find in a guidebook — no language surcharge, ever.',
+  },
+];
+---
+
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+  <h2 class="text-xl sm:text-2xl font-bold mb-8 text-center">Why Seoulsanchaek</h2>
+  <div class="grid sm:grid-cols-3 gap-6">
+    {strengths.map((s) => (
+      <div class="border border-stone-200 rounded-2xl p-6 bg-white">
+        <h3 class="font-semibold text-teal-800 mb-2">{s.title}</h3>
+        <p class="text-sm text-stone-600 leading-relaxed">{s.body}</p>
+      </div>
+    ))}
+  </div>
+</section>

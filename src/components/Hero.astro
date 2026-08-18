@@ -1,0 +1,21 @@
+---
+import CTAButton from './CTAButton.astro';
+---
+
+<section class="bg-gradient-to-br from-teal-800 via-teal-700 to-stone-800 text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-start gap-6">
+    <h1 class="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">
+      Seoul, Walked Honestly
+    </h1>
+    <p class="text-teal-50 text-base sm:text-lg max-w-xl">
+      Shaped by real fieldwork as a fixer and road manager, I personally guide
+      private tours for individual travelers and small groups.
+    </p>
+    <div class="flex flex-wrap gap-3 mt-2">
+      <CTAButton href="/contact" variant="primary">Contact Me</CTAButton>
+      <CTAButton href="/pricing" variant="secondary" class="!bg-transparent !text-white !border-white hover:!bg-white/10">
+        See Pricing
+      </CTAButton>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const tours = await getCollection('tours');
+  return tours.map((tour) => ({
+    params: { slug: tour.id },
+    props: { tour },
+  }));
+}
+
+const { tour } = Astro.props;
+const { Content } = await render(tour);
+---
+
+<BaseLayout title={tour.data.title} description={tour.data.summary}>
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <span class="text-xs font-medium text-teal-700 uppercase tracking-wide">
+      {tour.data.categoryLabel}
+    </span>
+    <h1 class="text-3xl font-bold mt-2 mb-4">{tour.data.title}</h1>
+    <p class="text-stone-600 mb-6">{tour.data.highlight}</p>
+
+    <p class="text-sm text-stone-500 mb-4">Group size: {tour.data.capacity}</p>
+
+    <div class="border border-stone-200 rounded-2xl overflow-hidden mb-8">
+      <table class="w-full text-sm">
+        <thead class="bg-stone-100 text-stone-500 text-left">
+          <tr>
+            <th class="px-4 py-3">Tier</th>
+            <th class="px-4 py-3">Duration</th>
+            <th class="px-4 py-3">Price</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-100">
+          {tour.data.tiers.map((tier) => (
+            <tr>
+              <td class="px-4 py-3 font-medium">{tier.label}</td>
+              <td class="px-4 py-3 text-stone-600">{tier.duration}</td>
+              <td class="px-4 py-3 text-stone-800 font-semibold">{tier.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <article class="text-stone-700 leading-relaxed mb-10 [&_p]:mb-4 [&_strong]:font-semibold [&_strong]:text-stone-900 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1">
+      <Content />
+    </article>
+
+    <div class="border-t border-stone-200 pt-8">
+      <p class="text-sm text-stone-500 mb-4">Your guide for this tour: <a href="/guide" class="text-teal-700 hover:underline">Slam</a></p>
+      <CTAButton href={`/contact?tour=${encodeURIComponent(tour.data.title)}`}>Get an Exact Quote</CTAButton>
+    </div>
+  </section>
+</BaseLayout>

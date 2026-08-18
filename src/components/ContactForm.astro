@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+
+const tours = await getCollection('tours');
+---
+
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="flex flex-col gap-4 max-w-xl"
+  action="/contact/thanks/"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>Leave this field blank: <input name="bot-field" /></label>
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <label class="flex flex-col gap-1 text-sm">
+      Name
+      <input
+        type="text"
+        name="name"
+        required
+        class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+      />
+    </label>
+    <label class="flex flex-col gap-1 text-sm">
+      Email (or WhatsApp)
+      <input
+        type="text"
+        name="contact_info"
+        required
+        class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+      />
+    </label>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-4">
+    <label class="flex flex-col gap-1 text-sm">
+      Preferred Date
+      <input
+        type="date"
+        name="preferred_date"
+        class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+      />
+    </label>
+    <label class="flex flex-col gap-1 text-sm">
+      Party Size
+      <input
+        type="number"
+        min="1"
+        name="party_size"
+        class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+      />
+    </label>
+  </div>
+
+  <label class="flex flex-col gap-1 text-sm">
+    Tour of Interest
+    <select
+      name="tour_interest"
+      id="tour_interest"
+      class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+    >
+      <option value="">Select a tour</option>
+      {tours.map((tour) => (
+        <option value={tour.data.title}>{tour.data.title}</option>
+      ))}
+    </select>
+  </label>
+
+  <label class="flex flex-col gap-1 text-sm">
+    Message
+    <textarea
+      name="message"
+      rows="5"
+      class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+    ></textarea>
+  </label>
+
+  <button
+    type="submit"
+    class="mt-2 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium bg-teal-700 text-white hover:bg-teal-800 transition-colors"
+  >
+    Message Slam Directly
+  </button>
+</form>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const tourParam = params.get('tour');
+  if (tourParam) {
+    const select = document.getElementById('tour_interest') as HTMLSelectElement | null;
+    if (select) {
+      const match = Array.from(select.options).find((o) => o.value === tourParam);
+      if (match) select.value = tourParam;
+    }
+  }
+</script>

@@ -1,0 +1,39 @@
+---
+interface Tier {
+  label: string;
+  duration: string;
+  price: string;
+}
+
+interface Props {
+  slug: string;
+  title: string;
+  categoryLabel: string;
+  capacity: string;
+  summary: string;
+  tiers: Tier[];
+}
+
+const { slug, title, categoryLabel, capacity, summary, tiers } = Astro.props;
+---
+
+<a
+  href={`/tours/${slug}`}
+  class="block border border-stone-200 rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-shadow"
+>
+  <div class="h-36 bg-gradient-to-br from-teal-700 to-stone-700"></div>
+  <div class="p-5 flex flex-col gap-2">
+    <span class="text-xs font-medium text-teal-700 uppercase tracking-wide">{categoryLabel}</span>
+    <h3 class="font-semibold text-lg leading-snug">{title}</h3>
+    <p class="text-sm text-stone-600">{summary}</p>
+    <div class="flex flex-col gap-1 mt-2 pt-2 border-t border-stone-100 text-sm">
+      {tiers.map((tier) => (
+        <div class="flex items-center justify-between">
+          <span class="text-stone-500">{tier.duration ? `${tier.label} · ${tier.duration}` : tier.label}</span>
+          <span class="font-semibold text-stone-800">{tier.price}</span>
+        </div>
+      ))}
+    </div>
+    <p class="text-xs text-stone-400 mt-1">{capacity}</p>
+  </div>
+</a>

@@ -1,0 +1,92 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Seoulsanchaek — private car, transit tour, and airport transfer services in Seoul, guided personally and priced honestly.' } = Astro.props;
+
+const navLinks = [
+  { href: '/guide', label: 'Guide' },
+  { href: '/tours', label: 'Tours' },
+  { href: '/pricing', label: 'FAQ' },
+];
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = `${title} | Seoulsanchaek — Private Tours & Airport Transfers in Seoul`;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristInformationCenter',
+  name: 'Seoulsanchaek',
+  description: 'Private car tours, transit tours, and airport transfers in Seoul, guided personally.',
+  url: 'https://seoulsanchaek.netlify.app',
+  areaServed: {
+    '@type': 'City',
+    name: 'Seoul',
+  },
+  priceRange: '₩₩',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Seoulsanchaek" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-stone-50 text-stone-900">
+    <header class="border-b border-stone-200 bg-stone-50/95 backdrop-blur sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+        <a href="/" class="font-bold text-lg tracking-tight">Seoulsanchaek</a>
+        <nav class="hidden sm:flex items-center gap-6 text-sm">
+          {navLinks.map((link) => (
+            <a href={link.href} class="hover:text-teal-700 transition-colors">{link.label}</a>
+          ))}
+        </nav>
+        <a
+          href="/contact"
+          class="text-sm font-medium bg-teal-700 text-white px-4 py-2 rounded-full hover:bg-teal-800 transition-colors"
+        >
+          Contact
+        </a>
+      </div>
+      <nav class="sm:hidden flex items-center justify-center gap-4 text-xs pb-3 px-4">
+        {navLinks.map((link) => (
+          <a href={link.href} class="hover:text-teal-700 transition-colors">{link.label}</a>
+        ))}
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-stone-200 bg-stone-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 text-sm text-stone-500 flex flex-col gap-2">
+        <p class="font-medium text-stone-700">Seoulsanchaek — No Middleman, Priced From the Floor.</p>
+        <a href="https://www.youtube.com/@slamlog" target="_blank" rel="noopener" class="text-teal-700 hover:underline w-fit">YouTube →</a>
+        <p>&copy; {new Date().getFullYear()} Seoulsanchaek. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+import { getCollection } from 'astro:content';
+
+const tours = (await getCollection('tours')).sort((a, b) => a.data.order - b.data.order);
+
+const faqs = [
+  {
+    q: "What's not included in the price?",
+    a: 'Personal meals, personal purchases, and admission fees (where applicable) are separate. We list them item by item when we send your quote.',
+  },
+  {
+    q: 'How does the language side work?',
+    a: '"I Know the Neighborhoods, English Comes Standard" — every tour is guided in fluent English at no extra cost, no per-language surcharge.',
+  },
+  {
+    q: "What's the cancellation/change policy?",
+    a: 'Schedule changes are handled as flexibly as possible when raised in advance. Full cancellation terms are shared together with your quote.',
+  },
+  {
+    q: 'Why is this more transparent than other tour platforms?',
+    a: '"No Middleman, Priced From the Floor" — real cost plus a minimal margin, nothing more. With no agency or platform fee in between, the price is simply more honest.',
+  },
+];
+---
+
+<BaseLayout title="Pricing & FAQ" description="See the floor-based, transparent pricing structure.">
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <h1 class="text-3xl font-bold mb-4">Nothing hidden in the price</h1>
+    <p class="text-stone-600 mb-10 leading-relaxed">
+      Prices are built from real cost (local transport, admission, labor) plus
+      a minimal operating margin. There's no middleman fee skimmed off the top.
+    </p>
+
+    {tours.map((tour) => (
+      <div class="border border-stone-200 rounded-2xl overflow-hidden mb-6">
+        <p class="text-xs font-medium text-teal-700 uppercase tracking-wide px-4 pt-4">{tour.data.categoryLabel}</p>
+        <p class="text-sm text-stone-600 px-4 pt-1">{tour.data.summary}</p>
+        <table class="w-full text-sm mt-2">
+          <thead class="bg-stone-100 text-stone-500 text-left">
+            <tr>
+              <th class="px-4 py-3">Tier</th>
+              <th class="px-4 py-3">Duration</th>
+              <th class="px-4 py-3">Price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-100">
+            {tour.data.tiers.map((tier) => (
+              <tr>
+                <td class="px-4 py-3 font-medium">{tier.label}</td>
+                <td class="px-4 py-3 text-stone-600">{tier.duration}</td>
+                <td class="px-4 py-3 text-stone-800">{tier.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="text-xs text-stone-500 px-4 py-3 bg-stone-50 border-t border-stone-200 mt-2">
+          <a href={`/tours/${tour.id}`} class="text-teal-700 hover:underline">See full details →</a>
+        </p>
+      </div>
+    ))}
+
+    <p class="text-xs text-stone-500 mb-2">
+      Private car tours: fuel, tolls, and admission are included within the Seoul metro area (Seoul, Gimpo, Paju). Trips beyond the metro area (Ganghwa, Yangpyeong, Gapyeong, etc.) add ₩20,000–30,000 depending on distance. Extending a car tour is +₩70,000 per hour.
+    </p>
+    <p class="text-xs text-stone-500 mb-10">
+      English included as standard · tax noted separately · cancellation policy shared together with your quote.
+    </p>
+
+    <div class="border border-stone-200 rounded-2xl p-6 mb-10">
+      <h2 class="text-lg font-bold mb-3">Payment</h2>
+      <p class="text-sm text-stone-700 leading-relaxed mb-2">
+        All prices are set in KRW. Payment by bank transfer is accepted in
+        KRW, USD, or EUR.
+      </p>
+      <p class="text-sm text-stone-700 leading-relaxed">
+        For USD/EUR transfers, the KRW amount is converted using KEB Hana
+        Bank's published exchange rate (매매기준율) on the day payment is
+        sent — a public, verifiable rate rather than a rate I set myself.
+      </p>
+    </div>
+
+    <h2 class="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+    <div class="flex flex-col gap-4 mb-10">
+      {faqs.map((item) => (
+        <div class="border border-stone-200 rounded-xl p-5">
+          <p class="font-medium mb-2">{item.q}</p>
+          <p class="text-sm text-stone-600 leading-relaxed">{item.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <CTAButton href="/contact">Get an Exact Quote</CTAButton>
+  </section>
+</BaseLayout>
