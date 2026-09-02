@@ -11,12 +11,11 @@ const slides = [
 
 <section class="relative overflow-hidden text-white">
   <div class="absolute inset-0">
-    {slides.map((src, i) => (
+    {slides.map((src) => (
       <img
         src={src}
         alt=""
         class="hero-slide absolute inset-0 w-full h-full object-cover"
-        style={`animation-delay: ${i * 6}s;`}
       />
     ))}
     <div class="absolute inset-0 bg-black/20"></div>
@@ -39,17 +38,26 @@ const slides = [
   </div>
 </section>
 
+<script>
+  const slides = Array.from(document.querySelectorAll<HTMLElement>('.hero-slide'));
+  const shuffled = [...slides].sort(() => Math.random() - 0.5);
+  shuffled.forEach((slide, i) => {
+    slide.parentElement?.appendChild(slide);
+    slide.style.animationDelay = `${i * 6}s`;
+  });
+</script>
+
 <style>
   .hero-slide {
     opacity: 0;
-    animation: heroFade 24s infinite;
+    animation: heroFade 36s infinite;
   }
 
   @keyframes heroFade {
     0% { opacity: 0; }
     4.2% { opacity: 1; }
-    29.2% { opacity: 1; }
-    33.3% { opacity: 0; }
+    16.7% { opacity: 1; }
+    20.8% { opacity: 0; }
     100% { opacity: 0; }
   }
 </style>
