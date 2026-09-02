@@ -1,13 +1,32 @@
 ---
 import CTAButton from './CTAButton.astro';
+
+const slides = [
+  '/images/hero/1-hanok-alley.jpg',
+  '/images/hero/2-guide-walk.jpg',
+  '/images/hero/3-namsan-view.jpg',
+  '/images/hero/4-hanbok-palace.jpg',
+];
 ---
 
-<section class="bg-gradient-to-br from-teal-800 via-teal-700 to-stone-800 text-white">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-start gap-6">
-    <h1 class="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">
+<section class="relative overflow-hidden text-white">
+  <div class="absolute inset-0">
+    {slides.map((src, i) => (
+      <img
+        src={src}
+        alt=""
+        class="hero-slide absolute inset-0 w-full h-full object-cover"
+        style={`animation-delay: ${i * 6}s;`}
+      />
+    ))}
+    <div class="absolute inset-0 bg-black/20"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 py-20 sm:py-28 flex flex-col items-start gap-6">
+    <h1 class="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
       Seoul, Walked Honestly
     </h1>
-    <p class="text-teal-50 text-base sm:text-lg max-w-xl">
+    <p class="text-white text-base sm:text-lg max-w-xl [text-shadow:0_1px_10px_rgba(0,0,0,0.7)]">
       Shaped by real fieldwork as a fixer and road manager, I personally guide
       private tours for individual travelers and small groups.
     </p>
@@ -19,3 +38,18 @@ import CTAButton from './CTAButton.astro';
     </div>
   </div>
 </section>
+
+<style>
+  .hero-slide {
+    opacity: 0;
+    animation: heroFade 24s infinite;
+  }
+
+  @keyframes heroFade {
+    0% { opacity: 0; }
+    4% { opacity: 1; }
+    21% { opacity: 1; }
+    25% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+</style>
