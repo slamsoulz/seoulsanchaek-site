@@ -2,9 +2,10 @@
 interface Props {
   category: string;
   capacity: string;
+  duration?: string;
 }
 
-const { category, capacity } = Astro.props;
+const { category, capacity, duration = 'Custom itinerary' } = Astro.props;
 
 const infoByCategory: Record<string, { icon: string; label: string; value: string }[]> = {
   walking: [
@@ -34,7 +35,7 @@ const infoByCategory: Record<string, { icon: string; label: string; value: strin
   'multi-day': [
     { icon: '🚌', label: 'Transportation', value: 'Private bus' },
     { icon: '🏨', label: 'Accommodation', value: '3-star hotels' },
-    { icon: '📅', label: 'Duration', value: '4 days · 3 nights' },
+    { icon: '📅', label: 'Duration', value: duration },
     { icon: '🍽️', label: 'Meals', value: 'All meals during the tour' },
     { icon: '🗣️', label: 'Language', value: 'English, Korean' },
     { icon: '👥', label: 'Group size', value: capacity },
