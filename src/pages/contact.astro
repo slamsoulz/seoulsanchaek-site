@@ -8,6 +8,30 @@ import ContactForm from '../components/ContactForm.astro';
     <h1 class="text-3xl font-bold mb-2">Contact Slam Directly</h1>
     <p class="text-stone-600 mb-10">I reply personally within 24–48 hours.</p>
 
+    <div class="grid sm:grid-cols-2 gap-4 mb-10">
+      <a
+        href="https://wa.me/821044775115"
+        target="_blank"
+        rel="noopener"
+        class="flex items-center gap-4 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow"
+      >
+        <img src="/images/whatsapp-qr.png" alt="WhatsApp QR code" class="w-20 h-20 rounded-lg border border-stone-200" />
+        <div>
+          <p class="font-semibold text-stone-900">WhatsApp</p>
+          <p class="text-sm text-stone-600">+82 10 4477 5115</p>
+          <p class="text-xs text-teal-700">Scan or tap to chat →</p>
+        </div>
+      </a>
+      <a
+        href="mailto:seoulwalk.min@gmail.com"
+        class="flex flex-col justify-center gap-1 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow"
+      >
+        <p class="font-semibold text-stone-900">Email</p>
+        <p class="text-sm text-stone-600">seoulwalk.min@gmail.com</p>
+        <p class="text-xs text-teal-700">Tap to email →</p>
+      </a>
+    </div>
+
     <ContactForm />
   </section>
 </BaseLayout>

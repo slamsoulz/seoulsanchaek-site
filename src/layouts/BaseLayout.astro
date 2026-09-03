@@ -31,6 +31,8 @@ const structuredData = {
   },
   priceRange: '$$',
   sameAs: ['https://www.youtube.com/@slamlog'],
+  email: 'seoulwalk.min@gmail.com',
+  telephone: '+82-10-4477-5115',
 };
 ---
 
@@ -91,7 +93,11 @@ const structuredData = {
     <footer class="border-t border-stone-200 bg-stone-100">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 text-sm text-stone-500 flex flex-col gap-2">
         <p class="font-medium text-stone-700">Seoul Walk Tours — No Middleman, Priced From the Floor.</p>
-        <a href="https://www.youtube.com/@slamlog" target="_blank" rel="noopener" class="text-teal-700 hover:underline w-fit">YouTube →</a>
+        <div class="flex flex-wrap gap-x-4 gap-y-1">
+          <a href="https://wa.me/821044775115" target="_blank" rel="noopener" class="text-teal-700 hover:underline w-fit">WhatsApp: +82 10 4477 5115</a>
+          <a href="mailto:seoulwalk.min@gmail.com" class="text-teal-700 hover:underline w-fit">seoulwalk.min@gmail.com</a>
+          <a href="https://www.youtube.com/@slamlog" target="_blank" rel="noopener" class="text-teal-700 hover:underline w-fit">YouTube →</a>
+        </div>
         <p>&copy; {new Date().getFullYear()} Seoul Walk Tours. All rights reserved.</p>
       </div>
     </footer>
