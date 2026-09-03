@@ -50,7 +50,7 @@ const galleryId = `gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
         data-gallery-thumb
         data-index={index}
       >
-        <img src={image.src} alt="" class="h-14 w-20 object-cover sm:h-16 sm:w-24" loading={index === 0 ? undefined : 'lazy'} />
+        <img src={image.src} alt={image.alt} class="h-14 w-20 object-cover sm:h-16 sm:w-24" loading={index === 0 ? undefined : 'lazy'} />
       </button>
     ))}
   </div>
