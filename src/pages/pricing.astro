@@ -8,15 +8,23 @@ const tours = (await getCollection('tours')).sort((a, b) => a.data.order - b.dat
 const faqs = [
   {
     q: "What's not included in the price?",
-    a: 'Personal meals, personal purchases, and admission fees (where applicable) are separate. We list them item by item when we send your quote.',
+    a: 'What is included depends on the tour. Personal purchases, optional activities, and any items not listed in the tour description are separate. For custom or multi-day tours, the quote lists inclusions and exclusions item by item before you confirm.',
   },
   {
-    q: 'How does the language side work?',
-    a: '"I Know the Neighborhoods, English Comes Standard" — every tour is guided in fluent English at no extra cost, no per-language surcharge.',
+    q: 'How are foreign-currency payments calculated?',
+    a: 'Prices are displayed in USD, with approximate KRW equivalents for reference. The final amount for payment is confirmed in writing, and foreign-currency payments are converted using a publicly available exchange rate on the payment date.',
   },
   {
     q: "What's the cancellation/change policy?",
-    a: 'Schedule changes are handled as flexibly as possible when raised in advance. Full cancellation terms are shared together with your quote.',
+    a: 'Please request changes or cancellations as early as possible. Before a booking is confirmed, there is no cancellation charge. After confirmation, any non-refundable costs already paid or committed—such as accommodation, transport, tickets, or partner services—may be deducted. The exact deadline, refund terms, and any applicable fees are provided with your quote and booking confirmation.',
+  },
+  {
+    q: 'When is the price final?',
+    a: 'A price becomes final when the written quote is confirmed. Custom itineraries, larger groups, distant destinations, vehicle requirements, accommodation, entrance fees, and seasonal availability can change the total, so these details are confirmed before payment.',
+  },
+  {
+    q: 'Can I receive a receipt or invoice?',
+    a: 'Yes. Please request a receipt or invoice after payment, and we can provide it for your records.',
   },
   {
     q: 'Why is this more transparent than other tour platforms?',
@@ -29,7 +37,7 @@ const faqs = [
   <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
     <h1 class="text-3xl font-bold mb-4">Nothing hidden in the price</h1>
     <p class="text-stone-600 mb-10 leading-relaxed">
-      Prices are built from real cost (local transport, admission, labor) plus
+      Prices are shown in USD with approximate KRW equivalents. They are built from real cost (local transport, admission, labor) plus
       a minimal operating margin. There's no middleman fee skimmed off the top.
     </p>
 
@@ -62,22 +70,24 @@ const faqs = [
     ))}
 
     <p class="text-xs text-stone-500 mb-2">
-      Private car tours: fuel, tolls, and admission are included within the Seoul metro area (Seoul, Gimpo, Paju). Trips beyond the metro area (Ganghwa, Yangpyeong, Gapyeong, etc.) add ₩20,000–30,000 depending on distance. Extending a car tour is +₩70,000 per hour.
+      Private car tours: fuel, tolls, and admission are included within the Seoul metro area (Seoul, Gimpo, Paju). Trips beyond the metro area, luggage limits, and additional hours are confirmed separately in the quote because the total depends on distance, time, and vehicle requirements.
     </p>
     <p class="text-xs text-stone-500 mb-10">
-      English included as standard · tax noted separately · cancellation policy shared together with your quote.
+      USD amounts are shown for convenience and may change with the exchange rate · inclusions, taxes, and cancellation terms are confirmed in your written quote.
     </p>
 
     <div class="border border-stone-200 rounded-2xl p-6 mb-10">
       <h2 class="text-lg font-bold mb-3">Payment</h2>
       <p class="text-sm text-stone-700 leading-relaxed mb-2">
-        All prices are set in KRW. Payment by bank transfer is accepted in
-        KRW, USD, or EUR.
+        Prices are displayed in USD with approximate KRW equivalents. Payment is available in KRW, USD, EUR, or
+        GBP by cash or bank transfer, including Wise transfers.
       </p>
       <p class="text-sm text-stone-700 leading-relaxed">
-        For USD/EUR transfers, the KRW amount is converted using KEB Hana
-        Bank's published exchange rate (매매기준율) on the day payment is
-        sent — a public, verifiable rate rather than a rate I set myself.
+        The final amount and currency instructions are provided with your written
+        quote. Foreign-currency payments are converted using a publicly available
+        exchange rate on the payment date. Wise, bank-transfer, and payment-fee
+        details are confirmed before payment; transfer and exchange fees are paid
+        by the guest.
       </p>
     </div>
 

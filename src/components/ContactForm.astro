@@ -42,8 +42,12 @@ const tours = await getCollection('tours');
     <label class="flex flex-col gap-1 text-sm">
       Preferred Date
       <input
-        type="date"
+        type="text"
         name="preferred_date"
+        inputmode="numeric"
+        placeholder="MM/DD/YYYY"
+        pattern="(0[1-9]|1[0-2])\\/(0[1-9]|[12]\\d|3[01])\\/\\d{4}"
+        aria-label="Preferred date (MM/DD/YYYY)"
         class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
       />
     </label>

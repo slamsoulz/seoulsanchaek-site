@@ -22,6 +22,7 @@ const tours = (await getCollection('tours')).sort((a, b) => a.data.order - b.dat
           capacity={tour.data.capacity}
           summary={tour.data.summary}
           tiers={tour.data.tiers}
+          image={tour.data.image}
         />
       ))}
     </div>

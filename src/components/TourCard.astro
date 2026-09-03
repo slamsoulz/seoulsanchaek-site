@@ -12,9 +12,10 @@ interface Props {
   capacity: string;
   summary: string;
   tiers: Tier[];
+  image?: string;
 }
 
-const { slug, title, categoryLabel, capacity, summary, tiers } = Astro.props;
+const { slug, title, categoryLabel, capacity, summary, tiers, image } = Astro.props;
 ---
 
 <a
@@ -22,13 +23,16 @@ const { slug, title, categoryLabel, capacity, summary, tiers } = Astro.props;
   class="block border border-stone-200 rounded-2xl overflow-hidden bg-white hover:shadow-lg transition-shadow"
 >
   <img
-    src={`/images/tours/${slug}.png`}
+    src={image ?? `/images/tours/${slug}.png`}
     alt={`${title} in Seoul`}
     class="h-36 w-full object-cover"
     loading="lazy"
   />
   <div class="p-5 flex flex-col gap-2">
-    <span class="text-xs font-medium text-teal-700 uppercase tracking-wide">{categoryLabel}</span>
+    <div class="flex items-center justify-between gap-3">
+      <span class="text-xs font-medium text-teal-700 uppercase tracking-wide">{categoryLabel}</span>
+      <span class="text-xs text-stone-400">{tiers.length > 1 ? `${tiers.length} options` : 'Private'}</span>
+    </div>
     <h3 class="font-semibold text-lg leading-snug">{title}</h3>
     <p class="text-sm text-stone-600">{summary}</p>
     <div class="flex flex-col gap-1 mt-2 pt-2 border-t border-stone-100 text-sm">

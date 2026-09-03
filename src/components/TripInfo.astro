@@ -1,0 +1,60 @@
+---
+interface Props {
+  category: string;
+  capacity: string;
+}
+
+const { category, capacity } = Astro.props;
+
+const infoByCategory: Record<string, { icon: string; label: string; value: string }[]> = {
+  walking: [
+    { icon: '🚶', label: 'Transportation', value: 'Subway, bus & walking' },
+    { icon: '⏱️', label: 'Duration', value: '4 hours or custom' },
+    { icon: '🗣️', label: 'Language', value: 'English, Korean' },
+    { icon: '📍', label: 'Main areas', value: 'Seoul neighborhoods' },
+    { icon: '🎯', label: 'Tour type', value: 'Private walking tour' },
+    { icon: '👥', label: 'Group size', value: capacity },
+  ],
+  airport: [
+    { icon: '🚗', label: 'Transportation', value: 'Private vehicle' },
+    { icon: '⏱️', label: 'Duration', value: 'One-way transfer' },
+    { icon: '🗣️', label: 'Language', value: 'English, Korean' },
+    { icon: '🧳', label: 'Luggage', value: 'Confirm with inquiry' },
+    { icon: '📍', label: 'Departure', value: 'Incheon / Gimpo Airport' },
+    { icon: '👥', label: 'Group size', value: capacity },
+  ],
+  car: [
+    { icon: '🚗', label: 'Transportation', value: 'Private car' },
+    { icon: '⏱️', label: 'Duration', value: '4–10 hours' },
+    { icon: '🗣️', label: 'Language', value: 'English, Korean' },
+    { icon: '🧳', label: 'Luggage', value: 'Confirm with inquiry' },
+    { icon: '📍', label: 'Coverage', value: 'Seoul & nearby areas' },
+    { icon: '👥', label: 'Group size', value: 'Private group' },
+  ],
+  'multi-day': [
+    { icon: '🚌', label: 'Transportation', value: 'Private bus' },
+    { icon: '🏨', label: 'Accommodation', value: '3-star hotels' },
+    { icon: '📅', label: 'Duration', value: '4 days · 3 nights' },
+    { icon: '🍽️', label: 'Meals', value: 'All meals during the tour' },
+    { icon: '🗣️', label: 'Language', value: 'English, Korean' },
+    { icon: '👥', label: 'Group size', value: capacity },
+  ],
+};
+
+const items = infoByCategory[category] ?? infoByCategory.car;
+---
+
+<section class="border border-stone-200 rounded-2xl bg-white p-5 sm:p-6 mb-8">
+  <h2 class="text-xl font-bold mb-5">Trip Info</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
+    {items.map((item) => (
+      <div class="flex items-start gap-3">
+        <span class="text-xl leading-6" aria-hidden="true">{item.icon}</span>
+        <div>
+          <p class="text-xs uppercase tracking-wide text-stone-500">{item.label}</p>
+          <p class="font-semibold text-stone-800 mt-0.5">{item.value}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

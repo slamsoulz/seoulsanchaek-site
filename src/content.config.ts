@@ -5,12 +5,13 @@ const tours = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/tours' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(['car', 'walking', 'airport']),
+    category: z.enum(['car', 'walking', 'airport', 'multi-day']),
     categoryLabel: z.string(),
     order: z.number(),
     capacity: z.string(),
     summary: z.string(),
     highlight: z.string(),
+    image: z.string().optional(),
     tiers: z.array(z.object({
       label: z.string(),
       duration: z.string(),

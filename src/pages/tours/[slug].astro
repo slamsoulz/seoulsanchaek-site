@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTAButton from '../../components/CTAButton.astro';
+import TripInfo from '../../components/TripInfo.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -25,13 +26,15 @@ const { Content } = await render(tour);
 
     <p class="text-sm text-stone-500 mb-4">Group size: {tour.data.capacity}</p>
 
+    <TripInfo category={tour.data.category} capacity={tour.data.capacity} />
+
     <div class="border border-stone-200 rounded-2xl overflow-hidden mb-8">
-      <table class="w-full text-sm">
+      <table class="w-full table-fixed text-sm">
         <thead class="bg-stone-100 text-stone-500 text-left">
           <tr>
-            <th class="px-4 py-3">Tier</th>
-            <th class="px-4 py-3">Duration</th>
-            <th class="px-4 py-3">Price</th>
+            <th class="w-1/3 px-4 py-3">Tier</th>
+            <th class="w-1/3 px-4 py-3">Duration</th>
+            <th class="w-1/3 px-4 py-3">Price</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-stone-100">
@@ -46,13 +49,15 @@ const { Content } = await render(tour);
       </table>
     </div>
 
-    <article class="text-stone-700 leading-relaxed mb-10 [&_p]:mb-4 [&_strong]:font-semibold [&_strong]:text-stone-900 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1">
+    <article class="overflow-x-auto text-stone-700 leading-relaxed mb-10 [&_p]:mb-4 [&_strong]:font-semibold [&_strong]:text-stone-900 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1 [&_table]:w-full [&_table]:min-w-[560px] [&_table]:table-fixed [&_th]:border-b [&_th]:border-stone-200 [&_th]:px-2 [&_th]:py-2 [&_th]:text-left [&_td]:align-top [&_td]:break-words [&_td]:px-2 [&_td]:py-2 [&_td]:leading-snug [&_td:last-child]:whitespace-nowrap">
       <Content />
     </article>
 
     <div class="border-t border-stone-200 pt-8">
       <p class="text-sm text-stone-500 mb-4">Your guide for this tour: <a href="/guide" class="text-teal-700 hover:underline">Slam</a></p>
-      <CTAButton href={`/contact?tour=${encodeURIComponent(tour.data.title)}`}>Get an Exact Quote</CTAButton>
+      <CTAButton href={`/contact?tour=${encodeURIComponent(tour.data.title)}`}>
+        {tour.data.category === 'multi-day' ? 'Check Availability' : 'Get an Exact Quote'}
+      </CTAButton>
     </div>
   </section>
 </BaseLayout>
