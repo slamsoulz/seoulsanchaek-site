@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 
 const tours = await getCollection('tours');
+const airportTransfer = tours.find((tour) => tour.id === 'airport-transfer');
+const walkingTour = tours.find((tour) => tour.id === 'walking');
+const remainingTours = tours.filter((tour) => !['airport-transfer', 'walking'].includes(tour.id));
 ---
 
 <form
@@ -70,7 +73,10 @@ const tours = await getCollection('tours');
       class="border border-stone-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
     >
       <option value="">Select a tour</option>
-      {tours.map((tour) => (
+      {airportTransfer && <option value={airportTransfer.data.title}>{airportTransfer.data.title}</option>}
+      {walkingTour && <option value={walkingTour.data.title}>{walkingTour.data.title}</option>}
+      <option value="Seoul Night Tour">Seoul Night Tour</option>
+      {remainingTours.map((tour) => (
         <option value={tour.data.title}>{tour.data.title}</option>
       ))}
     </select>
