@@ -6,7 +6,7 @@ order: 4
 capacity: "3–25 guests"
 summary: "A private 4-day, 3-night guided tour covering Seoul, Nami Island, Everland, and the DMZ."
 highlight: "Seoul highlights, nature, family-friendly experiences, and the DMZ in one private journey"
-image: "/images/tours/car.png"
+image: "/images/tours/dmz-nami.jpg"
 tiers:
   - label: "Adult"
     duration: "4 days · 3 nights"
@@ -19,9 +19,10 @@ tiers:
 This is a **private, 4-day, 3-night guided tour** around **Seoul and the
 surrounding region**, combining nature, culture, city highlights, and
 family-friendly activities. The tour includes private transportation, an
-English-speaking guide, accommodation in Seoul, daily breakfast, and entrance
-fees to key attractions. The listed price is $1,900 per adult and $1,800 per
-child. Final availability and booking details are confirmed after inquiry.
+English-speaking guide, accommodation in Seoul, all meals during the tour, and
+entrance fees to key attractions. The listed price is $1,900 per adult and
+$1,800 per child. Final availability and booking details are confirmed after
+inquiry.
 
 ## Booking
 
@@ -43,8 +44,6 @@ and final inclusions.
 - **Language**: English and Korean
 - **Fitness level**: Easy to moderate
 - **Group size**: 3–25 guests
-- **Minimum age**: 12
-- **Maximum age**: 75
 
 ## Highlights
 

@@ -8,9 +8,9 @@ summary: "A flexible 7-day private journey through Seoul, DMZ, Suwon, Gyeongju, 
 highlight: "A broad Korea introduction with private transportation and an English-speaking guide"
 image: "/images/tours/car.png"
 tiers:
-  - label: "Private tour"
+  - label: "Adult"
     duration: "7 days"
-    price: "Custom quote"
+    price: "From $3,900"
 ---
 
 ## Trip Info
@@ -22,10 +22,8 @@ tiers:
 - **Tour type**: Eco-tour and hiking
 - **Meals**: Confirmed in the final itinerary and quote
 - **Language**: English and Korean
-- **Fitness level**: Easy to moderate
+- **Fitness level**: Moderate — daily walking, some stairs and uneven terrain
 - **Group size**: 5–25 guests
-- **Minimum age**: 12
-- **Maximum age**: 75
 
 ## Overview
 
@@ -36,8 +34,8 @@ insights with private transportation and an English-speaking guide.
 ## Highlights
 
 - Seoul palaces, markets, modern culture, and K-pop energy
-- Nami Island, Petite France, and the Garden of Morning Calm
 - DMZ and N Seoul Tower
+- Suwon Hwaseong Fortress
 - Gyeongju, the historic capital of the Silla Dynasty
 - Busan's coastal temples, markets, and hillside villages
 
@@ -55,9 +53,10 @@ The final route and intercity transfers are confirmed before booking.
 
 ## Cost
 
-Pricing is custom quoted by group size, season, hotel, vehicle, meals,
-admissions, and final route. International airfare, travel insurance, personal
-expenses, tips, visa fees, and optional activities are excluded unless stated.
+Prices start from $3,900 per adult. The final quote depends on group size,
+season, hotel, vehicle, meals, admissions, and final route. International
+airfare, travel insurance, personal expenses, tips, visa fees, and optional
+activities are excluded unless stated.
 
 ## FAQs
 

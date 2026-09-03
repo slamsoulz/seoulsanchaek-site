@@ -4,37 +4,43 @@ category: "car"
 categoryLabel: "Private Car"
 order: 3
 capacity: "Private group pricing · 4+ or substantial luggage by inquiry"
-summary: "A private car and personal guide. Pick half day, standard, or a full day — including trips like the DMZ."
-highlight: "Your course comes first, always"
+summary: "A private car and personal guide, each tier following a set Seoul highlights route."
+highlight: "A set course, fine-tuned to your day"
 tiers:
   - label: "Half Day"
     duration: "4 hours"
     price: "$300 · per private group"
   - label: "Standard"
-    duration: "5-7 hours"
+    duration: "6 hours"
     price: "$500 · per private group"
   - label: "Full Day"
-    duration: "8-10 hours"
+    duration: "8 hours"
     price: "$650 · per private group"
   - label: "Additional Hour"
     duration: "per hour"
     price: "+$100"
 ---
 
-No fixed route, no landmark checklist. Tell me what you're into — food,
-history, shopping, a specific neighborhood, even a border-area trip like
-the DMZ on the full-day tier — and I'll build the time around it with a
-private car.
+Each tier follows a set route built around Seoul's classic highlights, so you
+know exactly what to expect before booking:
 
-Every private car tour is custom by default — the course you have in mind
-comes first. If it doesn't fit in the time we have, I'll tell you honestly
-and suggest what to trim or swap. Drawing on experience coordinating
-locations for international news and documentary crews, I move efficiently
-and know how to adjust on the spot.
+- **Half Day (4 hours)**: Gyeongbokgung Palace → Bukchon Hanok Village →
+  Bugaksan Skyway Palgakjeong → Myeongdong
+- **Standard (6 hours)**: Gyeongbokgung Palace → Bukchon Hanok Village →
+  Bugaksan Skyway Palgakjeong → Namsan / N Seoul Tower → Myeongdong
+- **Full Day (8 hours)**: Gyeongbokgung Palace → Bukchon Hanok Village →
+  Bugaksan Skyway Palgakjeong → Namsan / N Seoul Tower → a Hangang Park →
+  Myeongdong
+
+Want different spots, the DMZ, or somewhere outside Seoul instead? That's a
+Custom Travel Trip — tell us what you're into and we'll build the time around
+it. Drawing on experience coordinating locations for international news and
+documentary crews, I move efficiently and know how to adjust on the spot.
 
 - **Included**: vehicle, guide, fuel/tolls/admission within the Seoul metro area (Seoul, Gimpo, Paju)
 - **Not included**: personal meals, admission fees outside the metro area (noted separately)
 - **Start/end point**: Our 4-, 6-, and 8-hour tours begin and end within Seoul. Airport pick-up and drop-off combined with a Seoul tour require a Custom Travel Trip.
+- **Custom Travel Trip pricing**: Your selected tier price plus a $100 planning fee. Longer-distance itineraries may add further cost.
 - **Extending**: Additional time is $100 per hour.
 - **Beyond the metro area** (Ganghwa, Yangpyeong, Gapyeong, etc.): Quote on request, depending on distance and operating costs.
 - **Group size**: Prices are per private group, not per person. Groups of 4 or more require an inquiry for vehicle and operating arrangements.
@@ -67,10 +73,15 @@ The 4-, 6-, and 8-hour tours begin and end within Seoul. If you'd like airport
 pick-up or drop-off combined with a Seoul tour, that's arranged as a Custom
 Travel Trip — just let us know your flight details when you inquire.
 
+### How much does a Custom Travel Trip cost?
+
+Your selected tier price (Half Day, Standard, or Full Day) plus a $100
+planning fee. Longer-distance itineraries may add further cost.
+
 ### Can we choose our own itinerary?
 
-Yes. Every private car tour is customized around your interests, preferred
-areas, available time, and walking pace.
+Each tier follows a set route (see above). If you'd like different stops, the
+DMZ, or somewhere outside Seoul, that's arranged as a Custom Travel Trip.
 
 ### Are trips outside Seoul available?
 

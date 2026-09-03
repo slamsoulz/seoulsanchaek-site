@@ -8,9 +8,9 @@ summary: "A 12-day private journey through Jeju, Suncheon, Busan, Gyeongju, Sokc
 highlight: "A complete Korea journey from Jeju Island to Seoul"
 image: "/images/tours/car.png"
 tiers:
-  - label: "Private tour"
+  - label: "Adult"
     duration: "12 days · 11 nights"
-    price: "Custom quote"
+    price: "From $8,700"
 ---
 
 ## Trip Info
@@ -22,10 +22,8 @@ tiers:
 - **Tour type**: Eco-tour and hiking
 - **Meals**: Confirmed in the final itinerary and quote
 - **Language**: English and Korean
-- **Fitness level**: Easy to moderate
+- **Fitness level**: Moderate — daily walking, some stairs and uneven terrain
 - **Group size**: 5–25 guests
-- **Minimum age**: 12
-- **Maximum age**: 65
 
 ## Overview
 
@@ -62,8 +60,8 @@ before booking.
 
 ## Cost
 
-Pricing is custom quoted by group size, season, hotels, flights, vehicle,
-meals, admissions, and the final itinerary. International airfare, travel
+Prices start from $8,700 per adult. The final quote depends on group size,
+season, hotels, flights, vehicle, meals, admissions, and the final itinerary. International airfare, travel
 insurance, personal expenses, tips, visa fees, and optional activities are
 excluded unless stated.
 

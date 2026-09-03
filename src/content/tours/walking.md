@@ -4,21 +4,18 @@ category: "walking"
 categoryLabel: "Walking & Transit"
 order: 2
 capacity: "1-9 people · 10+ by inquiry"
-summary: "No car — same personal guide, moving by subway and bus. Pick half day or full day."
+summary: "No car — same personal guide, moving by subway and bus. Half day, full day, or evening — your call."
 highlight: "The same guide, a lower cost"
 tiers:
   - label: "Half Day"
     duration: "4 hours"
-    price: "$100 · approx. ₩137,000 · 1 guest"
+    price: "$100 · 1 guest"
   - label: "Half Day"
     duration: "4 hours"
-    price: "$70/person · approx. ₩96,000 · 2–9 guests"
+    price: "$70/person · 2–9 guests"
   - label: "Additional time"
     duration: "After 4 hours"
-    price: "$20/hour · approx. ₩27,000 · 1 guest"
-  - label: "Additional time"
-    duration: "After 4 hours"
-    price: "$20/person/hour · approx. ₩27,000 · 2–9 guests"
+    price: "$20/person/hour · all group sizes"
 ---
 
 Also known as a transit tour — same personal guiding, no vehicle. We get
@@ -35,15 +32,27 @@ and I'll build the day around it — half day or full day, your call.
 
 ### What places can we visit?
 
-Depending on your interests and available time, the tour may include
-Gyeongbokgung Palace, Gwanghwamun Square, Cheonggyecheon Stream, Myeongdong,
-Dongdaemun Design Plaza, Hangang Parks, traditional markets, and local
-neighborhoods.
+We won't visit all of these in one tour — based on your interests and
+available time, we'll pick a handful from places like Gyeongbokgung Palace,
+Gwanghwamun Square, Cheonggyecheon Stream, Myeongdong, Dongdaemun Design Plaza
+(DDP), N Seoul Tower and Namsan Park, Bukchon Hanok Village, Insadong, COEX
+Library, Bongeunsa, Gangnam, Hangang Parks, traditional markets, and local
+neighborhoods. We try to reflect what you want as closely as possible, and
+the guide fine-tunes the exact spots and order around the route and time
+available.
 
 ### Is the itinerary fixed?
 
 No. The route is adjusted around your interests, walking pace, preferred
 neighborhoods, and available time.
+
+### Can this be an evening tour?
+
+Yes. Tell us you'd like an evening start and we'll shape the route around
+food, night views, and nightlife-friendly neighborhoods like Gangnam,
+Dongdaemun Design Plaza, and Myeongdong. The evening tour is a 4-hour base —
+$120 for 1 guest, $85 per person for 2–9 guests — with optional additional
+time, capped at about 5 hours so we wrap up by 10–11 PM.
 
 ### What happens if we want more than 4 hours?
 

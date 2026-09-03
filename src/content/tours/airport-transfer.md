@@ -9,10 +9,10 @@ highlight: "A reliable ride, nothing more"
 tiers:
   - label: "Seoul"
     duration: ""
-    price: "$60 · approx. ₩82,000"
+    price: "$60"
   - label: "Metro Area"
     duration: ""
-    price: "$70 · approx. ₩96,000"
+    price: "$70"
   - label: "Other"
     duration: ""
     price: "Quote on request"
@@ -28,8 +28,8 @@ group size and luggage count to confirm.
 
 | Zone | Covers | Price |
 |---|---|---|
-| Seoul | All of Seoul, including Myeongdong, Gangnam | $60 (approx. ₩82,000) |
-| Metro Area | Ilsan, Bundang, Gimpo, Incheon city, and similar nearby areas | $70 (approx. ₩96,000) |
+| Seoul | All of Seoul, including Myeongdong, Gangnam | $60 |
+| Metro Area | Ilsan, Bundang, Gimpo, Incheon city, and similar nearby areas | $70 |
 | Other | Suwon, Yongin, Uijeongbu, Paju, and further out | Quote on request |
 
 "Other" destinations vary too much in round-trip distance and time to flat-rate
