@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import TripInfo from '../../components/TripInfo.astro';
 import TourGallery from '../../components/TourGallery.astro';
+import TourCard from '../../components/TourCard.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -60,6 +61,11 @@ const galleryByTour: Record<string, { src: string; alt: string }[]> = {
     { src: '/images/tours/dmz-nami-dmz.jpg', alt: 'DMZ tour' },
   ],
 };
+
+const otherTours = (await getCollection('tours'))
+  .filter((t) => t.id !== tour.id)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
 
 const galleryImages = galleryByTour[tour.id] ?? [
   { src: tour.data.image ?? '/images/tours/car.jpg', alt: `${tour.data.title} in Korea` },
@@ -137,6 +143,25 @@ const productStructuredData = {
       <CTAButton href={`/contact?tour=${encodeURIComponent(tour.data.title)}`}>
         {tour.data.category === 'multi-day' ? 'Check Availability' : 'Get an Exact Quote'}
       </CTAButton>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16 sm:pb-20">
+    <div class="border-t border-stone-200 pt-10">
+      <h2 class="text-lg font-bold mb-6">Other Tours</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {otherTours.map((t) => (
+          <TourCard
+            slug={t.id}
+            title={t.data.title}
+            categoryLabel={t.data.categoryLabel}
+            capacity={t.data.capacity}
+            summary={t.data.summary}
+            tiers={t.data.tiers}
+            image={t.data.image}
+          />
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

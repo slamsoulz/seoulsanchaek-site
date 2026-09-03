@@ -77,8 +77,16 @@ const galleryId = `gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
       });
     };
 
-    thumbs.forEach((thumb) => thumb.addEventListener('click', () => show(Number(thumb.dataset.index))));
-    gallery.querySelector('[data-gallery-prev]')?.addEventListener('click', () => show(current - 1));
-    gallery.querySelector('[data-gallery-next]')?.addEventListener('click', () => show(current + 1));
+    let timer = setInterval(() => show(current + 1), 4000);
+    const resetTimer = () => {
+      clearInterval(timer);
+      timer = setInterval(() => show(current + 1), 4000);
+    };
+
+    thumbs.forEach((thumb) => thumb.addEventListener('click', () => { show(Number(thumb.dataset.index)); resetTimer(); }));
+    gallery.querySelector('[data-gallery-prev]')?.addEventListener('click', () => { show(current - 1); resetTimer(); });
+    gallery.querySelector('[data-gallery-next]')?.addEventListener('click', () => { show(current + 1); resetTimer(); });
+    gallery.addEventListener('mouseenter', () => clearInterval(timer));
+    gallery.addEventListener('mouseleave', resetTimer);
   });
 </script>
