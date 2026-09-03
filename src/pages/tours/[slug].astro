@@ -64,8 +64,7 @@ const galleryByTour: Record<string, { src: string; alt: string }[]> = {
 
 const otherTours = (await getCollection('tours'))
   .filter((t) => t.id !== tour.id)
-  .sort((a, b) => a.data.order - b.data.order)
-  .slice(0, 3);
+  .sort((a, b) => a.data.order - b.data.order);
 
 const galleryImages = galleryByTour[tour.id] ?? [
   { src: tour.data.image ?? '/images/tours/car.jpg', alt: `${tour.data.title} in Korea` },
@@ -149,19 +148,53 @@ const productStructuredData = {
   <section class="max-w-5xl mx-auto px-4 sm:px-6 pb-16 sm:pb-20">
     <div class="border-t border-stone-200 pt-10">
       <h2 class="text-lg font-bold mb-6">Other Tours</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {otherTours.map((t) => (
-          <TourCard
-            slug={t.id}
-            title={t.data.title}
-            categoryLabel={t.data.categoryLabel}
-            capacity={t.data.capacity}
-            summary={t.data.summary}
-            tiers={t.data.tiers}
-            image={t.data.image}
-          />
-        ))}
+      <div class="relative" data-carousel>
+        <button
+          type="button"
+          class="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 items-center justify-center rounded-full bg-white border border-stone-200 shadow-md w-9 h-9 hover:bg-stone-50"
+          aria-label="Previous tours"
+          data-carousel-prev
+        >
+          ‹
+        </button>
+        <div class="flex gap-6 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" data-carousel-track>
+          {otherTours.map((t) => (
+            <div class="shrink-0 w-72 sm:w-80 snap-start">
+              <TourCard
+                slug={t.id}
+                title={t.data.title}
+                categoryLabel={t.data.categoryLabel}
+                capacity={t.data.capacity}
+                summary={t.data.summary}
+                tiers={t.data.tiers}
+                image={t.data.image}
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          type="button"
+          class="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 items-center justify-center rounded-full bg-white border border-stone-200 shadow-md w-9 h-9 hover:bg-stone-50"
+          aria-label="Next tours"
+          data-carousel-next
+        >
+          ›
+        </button>
       </div>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((carousel) => {
+      const track = carousel.querySelector<HTMLElement>('[data-carousel-track]');
+      if (!track) return;
+      const scrollByCard = (dir: 1 | -1) => {
+        const card = track.querySelector<HTMLElement>(':scope > div');
+        const amount = (card?.offsetWidth ?? 300) + 24;
+        track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+      };
+      carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => scrollByCard(-1));
+      carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => scrollByCard(1));
+    });
+  </script>
 </BaseLayout>
