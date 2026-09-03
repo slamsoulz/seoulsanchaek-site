@@ -6,7 +6,7 @@ order: 8
 capacity: "5–25 guests"
 summary: "A 12-day private journey through Jeju, Suncheon, Busan, Gyeongju, Sokcho, Seoul, DMZ, and Suwon."
 highlight: "A complete Korea journey from Jeju Island to Seoul"
-image: "/images/tours/car.png"
+image: "/images/tours/grand-south-korea.png"
 tiers:
   - label: "Adult"
     duration: "12 days · 11 nights"

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import TripInfo from '../../components/TripInfo.astro';
+import TourGallery from '../../components/TourGallery.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,10 +15,50 @@ export async function getStaticPaths() {
 
 const { tour } = Astro.props;
 const { Content } = await render(tour);
+
+const galleryByTour: Record<string, { src: string; alt: string }[]> = {
+  'airport-transfer': [
+    { src: '/images/tours/airport-transfer.png', alt: 'Airport transfer in Seoul' },
+    { src: '/images/guide-gallery/airport.jpg', alt: 'Guests arriving at the airport' },
+    { src: '/images/guide-gallery/airport-group.jpg', alt: 'Guests at the airport' },
+  ],
+  walking: [
+    { src: '/images/tours/walking.png', alt: 'Walking tour in Seoul' },
+    { src: '/images/hero/hangang-park-4k.png', alt: 'Hangang Park in Seoul' },
+    { src: '/images/guide-gallery/myeongdong.jpg', alt: 'Walking through Myeongdong' },
+  ],
+  car: [
+    { src: '/images/tours/car.png', alt: 'Private car tour in Seoul' },
+    { src: '/images/hero/namsan-tower-4k.jpg', alt: 'N Seoul Tower and Namsan' },
+    { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Seoul palace district' },
+  ],
+  'seoul-highlight-dmz-nami': [
+    { src: '/images/tours/dmz-nami.jpg', alt: 'Korean cultural site near Seoul' },
+    { src: '/images/tours/dmz-nami-dmz.jpg', alt: 'DMZ and Seoul highlights tour' },
+    { src: '/images/tours/korea-seven-day-highlights.png', alt: 'Korean cultural landscape' },
+  ],
+  'korea-seven-day-highlights': [
+    { src: '/images/tours/korea-seven-day-highlights.png', alt: 'Korean cultural landscape' },
+    { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Korean palace and mountain scenery' },
+    { src: '/images/hero/yeouido-hangang-4k.jpg', alt: 'Seoul riverfront scenery' },
+  ],
+  'grand-south-korea': [
+    { src: '/images/tours/grand-south-korea.png', alt: 'Korean cultural landscape' },
+    { src: '/images/hero/5-hanok-sunset-4k.png', alt: 'Traditional Korean architecture' },
+    { src: '/images/hero/yeouido-hangang-4k.jpg', alt: 'Seoul riverfront scenery' },
+  ],
+};
+
+const galleryImages = galleryByTour[tour.id] ?? [
+  { src: tour.data.image ?? '/images/tours/car.png', alt: `${tour.data.title} in Korea` },
+  { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Korean cultural scenery' },
+  { src: '/images/hero/hangang-park-4k.png', alt: 'Seoul scenery' },
+];
 ---
 
 <BaseLayout title={tour.data.title} description={tour.data.summary}>
   <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <TourGallery title={tour.data.title} images={galleryImages} />
     <span class="text-xs font-medium text-teal-700 uppercase tracking-wide">
       {tour.data.categoryLabel}
     </span>

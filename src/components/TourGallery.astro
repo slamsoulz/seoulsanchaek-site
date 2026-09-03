@@ -1,0 +1,84 @@
+---
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  title: string;
+  images: GalleryImage[];
+}
+
+const { title, images } = Astro.props;
+const galleryId = `gallery-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+---
+
+<section class="mb-8" aria-labelledby={`${galleryId}-heading`} data-gallery>
+  <h2 id={`${galleryId}-heading`} class="sr-only">{title} photo gallery</h2>
+  <div class="relative overflow-hidden rounded-2xl bg-stone-200">
+    <img
+      src={images[0].src}
+      alt={images[0].alt}
+      class="aspect-[16/9] w-full object-cover"
+      data-gallery-main
+    />
+    <button
+      type="button"
+      class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 px-3 py-2 text-xl leading-none text-white hover:bg-black/75"
+      aria-label="Previous photo"
+      data-gallery-prev
+    >
+      ‹
+    </button>
+    <button
+      type="button"
+      class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/55 px-3 py-2 text-xl leading-none text-white hover:bg-black/75"
+      aria-label="Next photo"
+      data-gallery-next
+    >
+      ›
+    </button>
+  </div>
+  <div class="mt-3 flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label={`${title} photos`}>
+    {images.map((image, index) => (
+      <button
+        type="button"
+        class="shrink-0 overflow-hidden rounded-lg border-2 border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600"
+        aria-label={`View photo ${index + 1}`}
+        aria-selected={index === 0}
+        role="tab"
+        data-gallery-thumb
+        data-index={index}
+      >
+        <img src={image.src} alt="" class="h-14 w-20 object-cover sm:h-16 sm:w-24" loading={index === 0 ? undefined : 'lazy'} />
+      </button>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+    const main = gallery.querySelector<HTMLImageElement>('[data-gallery-main]');
+    const thumbs = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-gallery-thumb]'));
+    if (!main || thumbs.length < 2) return;
+
+    let current = 0;
+    const show = (index: number) => {
+      current = (index + thumbs.length) % thumbs.length;
+      const thumb = thumbs[current];
+      const image = thumb.querySelector('img');
+      if (!image) return;
+      main.src = image.src;
+      main.alt = thumb.getAttribute('data-alt') ?? `${main.alt.split(' — ')[0]} — photo ${current + 1}`;
+      thumbs.forEach((item, itemIndex) => {
+        item.setAttribute('aria-selected', String(itemIndex === current));
+        item.classList.toggle('border-teal-600', itemIndex === current);
+        item.classList.toggle('border-transparent', itemIndex !== current);
+      });
+    };
+
+    thumbs.forEach((thumb) => thumb.addEventListener('click', () => show(Number(thumb.dataset.index))));
+    gallery.querySelector('[data-gallery-prev]')?.addEventListener('click', () => show(current - 1));
+    gallery.querySelector('[data-gallery-next]')?.addEventListener('click', () => show(current + 1));
+  });
+</script>
