@@ -15,19 +15,42 @@ const reviews = (await getReviews()).slice(0, 5);
   <Hero />
   <StrengthBoxes />
 
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
     <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center">I'll Be Your Guide, Personally</h2>
-    <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-      <img src="/images/guide.jpg" alt="Slam, your Seoul Walk Tours guide" class="w-24 h-24 rounded-full object-cover flex-shrink-0" />
-      <div class="text-center sm:text-left">
-        <p class="text-teal-700 font-medium mb-2">Slam <span class="text-stone-400 font-normal">(Yoo il Min)</span></p>
-        <p class="text-stone-700 leading-relaxed mb-3">
-          Ex-fixer for international press and documentary crews, former road manager, seven years
-          in hospitality, a year in San Francisco and six months based
-          locally in Ho Chi Minh City — I show you the neighborhoods I
-          actually walk, the alleys I actually love.
-        </p>
-        <a href="/guide" class="text-sm text-teal-700 hover:underline">Read my full story →</a>
+    <div class="flex flex-col lg:flex-row gap-8 lg:items-start">
+      <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start flex-1">
+        <img src="/images/guide.jpg" alt="Slam, your Seoul Walk Tours guide" class="w-24 h-24 rounded-full object-cover flex-shrink-0" />
+        <div class="text-center sm:text-left">
+          <p class="text-teal-700 font-medium mb-2">Slam <span class="text-stone-400 font-normal">(Yoo il Min)</span></p>
+          <p class="text-stone-700 leading-relaxed mb-3">
+            Ex-fixer for international press and documentary crews, former road manager, seven years
+            in hospitality, a year in San Francisco and six months based
+            locally in Ho Chi Minh City — I show you the neighborhoods I
+            actually walk, the alleys I actually love.
+          </p>
+          <a href="/guide" class="text-sm text-teal-700 hover:underline">Read my full story →</a>
+        </div>
+      </div>
+      <div class="flex flex-row sm:flex-row lg:flex-col gap-3 lg:w-56 flex-shrink-0">
+        <a
+          href="https://wa.me/821044775115"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-3 border border-stone-200 rounded-xl p-3 hover:shadow-md transition-shadow flex-1 lg:flex-none"
+        >
+          <img src="/images/whatsapp-qr.png" alt="WhatsApp QR code" class="w-12 h-12 rounded flex-shrink-0" />
+          <div>
+            <p class="text-sm font-semibold text-stone-900">WhatsApp</p>
+            <p class="text-xs text-stone-500">+82 10 4477 5115</p>
+          </div>
+        </a>
+        <a
+          href="mailto:seoulwalk.min@gmail.com"
+          class="flex flex-col justify-center border border-stone-200 rounded-xl p-3 hover:shadow-md transition-shadow flex-1 lg:flex-none"
+        >
+          <p class="text-sm font-semibold text-stone-900">Email</p>
+          <p class="text-xs text-stone-500 break-all">seoulwalk.min@gmail.com</p>
+        </a>
       </div>
     </div>
   </section>
