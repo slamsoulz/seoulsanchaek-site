@@ -16,18 +16,21 @@ const navLinks = [
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const pageTitle = `${title} | Seoul Walk Tours — Private Tours & Airport Transfers in Seoul`;
+const ogImageURL = new URL('/images/hero/4-hanbok-palace-4k.jpg', Astro.site);
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'TouristInformationCenter',
+  '@type': 'TravelAgency',
   name: 'Seoul Walk Tours',
-  description: 'Private car tours, transit tours, and airport transfers in Seoul, guided personally.',
+  description: 'Private car tours, transit tours, and airport transfers in Seoul, guided personally by an English-speaking local guide.',
   url: 'https://seoulwalktours.netlify.app',
+  image: ogImageURL.toString(),
   areaServed: {
     '@type': 'City',
     name: 'Seoul',
   },
-  priceRange: '₩₩',
+  priceRange: '$$',
+  sameAs: ['https://www.youtube.com/@slamlog'],
 };
 ---
 
@@ -47,10 +50,14 @@ const structuredData = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="Seoul Walk Tours" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="900" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>

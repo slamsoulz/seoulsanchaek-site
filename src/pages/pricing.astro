@@ -31,9 +31,23 @@ const faqs = [
     a: '"No Middleman, Priced From the Floor" — real cost plus a minimal margin, nothing more. With no agency or platform fee in between, the price is simply more honest.',
   },
 ];
+
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
 <BaseLayout title="Pricing & FAQ" description="See the floor-based, transparent pricing structure.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
   <section class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
     <h1 class="text-3xl font-bold mb-4">Nothing hidden in the price</h1>
     <p class="text-stone-600 mb-10 leading-relaxed">

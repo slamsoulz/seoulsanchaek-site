@@ -1,0 +1,25 @@
+# Seoul Walk Tours
+
+> Private, personally-guided tours in Seoul, South Korea. Run solo by Slam (Yoo il Min), a former international press fixer and road manager — no agency, no middleman markup. Prices are built from real cost plus a minimal margin.
+
+## Who this is for
+Individual travelers and small groups (1-25 people) who want an English-speaking private local guide in Seoul, rather than a joined group tour.
+
+## Services
+- Airport Transfer: one-way private pickup/drop-off between Incheon or Gimpo Airport and Seoul.
+- Walking & Transit Tour: private guided tour by subway and on foot, half-day, full-day, or evening.
+- Private Car Tour: private car and guide, fixed half-day/standard/full-day Seoul highlight routes, or a Custom Travel Trip for airport-combined or off-route requests.
+- 4D Private Seoul Highlights with DMZ / Nami Island: 4-day, 3-night multi-day private tour.
+- Best of Korea (7 days) and Grand South Korea (12 days): multi-day private itineraries covering Seoul, DMZ, Gyeongju, Busan, and (12-day) Jeju and Sokcho.
+
+## Key facts
+- Pricing is transparent and floor-based (real cost + minimal margin), shown in USD.
+- No hidden middleman or platform fee.
+- Guide speaks fluent English and Korean.
+- Payment accepted in KRW, USD, EUR, GBP by cash, bank transfer, or Wise.
+
+## Pages
+- Tours & pricing: /tours
+- Pricing & FAQ: /pricing
+- Guide bio: /guide
+- Contact: /contact
