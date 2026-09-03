@@ -63,7 +63,49 @@ import CTAButton from '../components/CTAButton.astro';
         From Fixing to Touring, One Person All the Way — contact me
         directly, not a company.
       </p>
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <a
+          href="https://wa.me/821044775115"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center gap-4 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow"
+        >
+          <img src="/images/whatsapp-qr.png" alt="WhatsApp QR code" class="w-16 h-16 rounded-lg border border-stone-200" />
+          <div>
+            <p class="font-semibold text-stone-900">WhatsApp</p>
+            <p class="text-sm text-stone-600">+82 10 4477 5115</p>
+            <p class="text-xs text-teal-700">Scan or tap to chat →</p>
+          </div>
+        </a>
+        <a
+          href="mailto:seoulwalk.min@gmail.com"
+          class="flex flex-col justify-center gap-1 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow"
+          data-copy-email
+        >
+          <p class="font-semibold text-stone-900">Email</p>
+          <p class="text-sm text-stone-600">seoulwalk.min@gmail.com</p>
+          <p class="text-xs text-teal-700" data-copy-label>Tap to email · <span data-copy-trigger class="underline">copy instead</span></p>
+        </a>
+      </div>
       <CTAButton href="/contact">Ask Me Directly</CTAButton>
     </div>
   </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>('[data-copy-trigger]').forEach((trigger) => {
+      trigger.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText('seoulwalk.min@gmail.com');
+          const label = trigger.closest('[data-copy-email]')?.querySelector<HTMLElement>('[data-copy-label]');
+          if (label) {
+            const original = label.innerHTML;
+            label.textContent = 'Copied!';
+            setTimeout(() => { label.innerHTML = original; }, 1500);
+          }
+        } catch {}
+      });
+    });
+  </script>
 </BaseLayout>

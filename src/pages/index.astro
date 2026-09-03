@@ -47,12 +47,32 @@ const reviews = (await getReviews()).slice(0, 5);
         <a
           href="mailto:seoulwalk.min@gmail.com"
           class="flex flex-col justify-center border border-stone-200 rounded-xl p-3 hover:shadow-md transition-shadow flex-1 lg:flex-none"
+          data-copy-email
         >
           <p class="text-sm font-semibold text-stone-900">Email</p>
           <p class="text-xs text-stone-500 break-all">seoulwalk.min@gmail.com</p>
+          <p class="text-xs text-teal-700" data-copy-label>Tap to email · <span data-copy-trigger class="underline">copy instead</span></p>
         </a>
       </div>
     </div>
+
+    <script>
+      document.querySelectorAll<HTMLElement>('[data-copy-trigger]').forEach((trigger) => {
+        trigger.addEventListener('click', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          try {
+            await navigator.clipboard.writeText('seoulwalk.min@gmail.com');
+            const label = trigger.closest('[data-copy-email]')?.querySelector<HTMLElement>('[data-copy-label]');
+            if (label) {
+              const original = label.innerHTML;
+              label.textContent = 'Copied!';
+              setTimeout(() => { label.innerHTML = original; }, 1500);
+            }
+          } catch {}
+        });
+      });
+    </script>
   </section>
 
   <section class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
