@@ -24,14 +24,33 @@ import ContactForm from '../components/ContactForm.astro';
       </a>
       <a
         href="mailto:seoulwalk.min@gmail.com"
-        class="flex flex-col justify-center gap-1 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow"
+        class="flex flex-col justify-center gap-1 border border-stone-200 rounded-2xl p-5 hover:shadow-lg transition-shadow relative"
+        data-copy-email
       >
         <p class="font-semibold text-stone-900">Email</p>
         <p class="text-sm text-stone-600">seoulwalk.min@gmail.com</p>
-        <p class="text-xs text-teal-700">Tap to email →</p>
+        <p class="text-xs text-teal-700" data-copy-label>Tap to email · <span data-copy-trigger class="underline">copy instead</span></p>
       </a>
     </div>
 
     <ContactForm />
   </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>('[data-copy-trigger]').forEach((trigger) => {
+      trigger.addEventListener('click', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          await navigator.clipboard.writeText('seoulwalk.min@gmail.com');
+          const label = trigger.closest('[data-copy-email]')?.querySelector<HTMLElement>('[data-copy-label]');
+          if (label) {
+            const original = label.innerHTML;
+            label.textContent = 'Copied!';
+            setTimeout(() => { label.innerHTML = original; }, 1500);
+          }
+        } catch {}
+      });
+    });
+  </script>
 </BaseLayout>
