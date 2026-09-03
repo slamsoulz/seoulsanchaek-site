@@ -18,24 +18,24 @@ const { Content } = await render(tour);
 
 const galleryByTour: Record<string, { src: string; alt: string }[]> = {
   'airport-transfer': [
-    { src: '/images/tours/airport-transfer.png', alt: 'Airport transfer in Seoul' },
+    { src: '/images/tours/airport-transfer.jpg', alt: 'Airport transfer in Seoul' },
     { src: '/images/tours/airport-transfer-2.jpg', alt: 'Guest pickup at Incheon Airport' },
     { src: '/images/tours/airport-transfer-3.jpg', alt: 'Private car transfer to Seoul' },
     { src: '/images/hero/myeongdong-oliveyoung-4k.jpg', alt: 'Myeongdong in Seoul' },
     { src: '/images/hero/namsan-tower-4k.jpg', alt: 'N Seoul Tower and Namsan' },
   ],
   walking: [
-    { src: '/images/tours/walking.png', alt: 'Walking tour in Seoul' },
-    { src: '/images/hero/hangang-park-4k.png', alt: 'Hangang Park in Seoul' },
+    { src: '/images/tours/walking.jpg', alt: 'Walking tour in Seoul' },
+    { src: '/images/hero/hangang-park-4k.jpg', alt: 'Hangang Park in Seoul' },
     { src: '/images/tours/walking-bukchon.jpg', alt: 'Bukchon Hanok Village in Seoul' },
     { src: '/images/hero/myeongdong-oliveyoung-4k.jpg', alt: 'Myeongdong in Seoul' },
     { src: '/images/hero/namsan-tower-4k.jpg', alt: 'N Seoul Tower and Namsan' },
   ],
   car: [
-    { src: '/images/tours/car.png', alt: 'Private car tour in Seoul' },
+    { src: '/images/tours/car.jpg', alt: 'Private car tour in Seoul' },
     { src: '/images/hero/namsan-tower-4k.jpg', alt: 'N Seoul Tower and Namsan' },
     { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Seoul palace district' },
-    { src: '/images/hero/hangang-park-4k.png', alt: 'Hangang Park in Seoul' },
+    { src: '/images/hero/hangang-park-4k.jpg', alt: 'Hangang Park in Seoul' },
     { src: '/images/hero/1-hanok-alley.jpg', alt: 'Bukchon Hanok alley in Seoul' },
   ],
   'seoul-highlight-dmz-nami': [
@@ -43,12 +43,12 @@ const galleryByTour: Record<string, { src: string; alt: string }[]> = {
     { src: '/images/tours/dmz-nami-dmz.jpg', alt: 'DMZ and Seoul highlights tour' },
     { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Korean palace and mountain scenery' },
     { src: '/images/hero/namsan-tower-4k.jpg', alt: 'N Seoul Tower and Namsan' },
-    { src: '/images/hero/5-hanok-sunset-4k.png', alt: 'Traditional Korean architecture' },
+    { src: '/images/hero/5-hanok-sunset-4k.jpg', alt: 'Traditional Korean architecture' },
   ],
   'korea-seven-day-highlights': [
     { src: '/images/tours/korea-7day-main.jpg', alt: 'Gyeongju historic sites' },
     { src: '/images/tours/korea-7day-busan.jpg', alt: 'Busan coastal temple' },
-    { src: '/images/hero/5-hanok-sunset-4k.png', alt: 'Traditional Korean architecture' },
+    { src: '/images/hero/5-hanok-sunset-4k.jpg', alt: 'Traditional Korean architecture' },
     { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Seoul palace district' },
     { src: '/images/tours/dmz-nami-dmz.jpg', alt: 'DMZ tour' },
   ],
@@ -62,9 +62,9 @@ const galleryByTour: Record<string, { src: string; alt: string }[]> = {
 };
 
 const galleryImages = galleryByTour[tour.id] ?? [
-  { src: tour.data.image ?? '/images/tours/car.png', alt: `${tour.data.title} in Korea` },
+  { src: tour.data.image ?? '/images/tours/car.jpg', alt: `${tour.data.title} in Korea` },
   { src: '/images/hero/4-hanbok-palace-4k.jpg', alt: 'Korean cultural scenery' },
-  { src: '/images/hero/hangang-park-4k.png', alt: 'Seoul scenery' },
+  { src: '/images/hero/hangang-park-4k.jpg', alt: 'Seoul scenery' },
 ];
 ---
 

@@ -14,8 +14,8 @@ tiers:
     duration: "4 hours"
     price: "$70/person · 2–9 guests"
   - label: "Additional time"
-    duration: "After 4 hours"
-    price: "$20/person/hour · all group sizes"
+    duration: "per hour"
+    price: "$20/person"
 ---
 
 Also known as a transit tour — same personal guiding, no vehicle. We get
