@@ -11,6 +11,9 @@ tiers:
   - label: "Adult"
     duration: "7 days"
     price: "From $3,900"
+  - label: "Child"
+    duration: "7 days"
+    price: "Quote on request"
 ---
 
 ## Trip Info
@@ -53,7 +56,7 @@ The final route and intercity transfers are confirmed before booking.
 
 ## Cost
 
-Prices start from $3,900 per adult. The final quote depends on group size,
+Prices start from $3,900 per adult. Child pricing is quoted on request. The final quote depends on group size,
 season, hotel, vehicle, meals, admissions, and final route. International
 airfare, travel insurance, personal expenses, tips, visa fees, and optional
 activities are excluded unless stated.

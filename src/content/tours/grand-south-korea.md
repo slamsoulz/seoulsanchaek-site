@@ -11,6 +11,9 @@ tiers:
   - label: "Adult"
     duration: "12 days · 11 nights"
     price: "From $8,700"
+  - label: "Child"
+    duration: "12 days · 11 nights"
+    price: "Quote on request"
 ---
 
 ## Trip Info
@@ -60,7 +63,7 @@ before booking.
 
 ## Cost
 
-Prices start from $8,700 per adult. The final quote depends on group size,
+Prices start from $8,700 per adult. Child pricing is quoted on request. The final quote depends on group size,
 season, hotels, flights, vehicle, meals, admissions, and the final itinerary. International airfare, travel
 insurance, personal expenses, tips, visa fees, and optional activities are
 excluded unless stated.
