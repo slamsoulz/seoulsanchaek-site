@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = '서울 워크 투어즈 — private car, transit tour, and airport transfer services in Seoul, guided personally and priced honestly.' } = Astro.props;
+const { title, description = 'Seoul Walk Tours — private car, transit tour, and airport transfer services in Seoul, guided personally and priced honestly.' } = Astro.props;
 
 const navLinks = [
   { href: '/guide', label: 'Guide' },
@@ -15,12 +15,12 @@ const navLinks = [
 ];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const pageTitle = `${title} | 서울 워크 투어즈 — Private Tours & Airport Transfers in Seoul`;
+const pageTitle = `${title} | Seoul Walk Tours — Private Tours & Airport Transfers in Seoul`;
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'TouristInformationCenter',
-  name: '서울 워크 투어즈',
+  name: 'Seoul Walk Tours',
   description: 'Private car tours, transit tours, and airport transfers in Seoul, guided personally.',
   url: 'https://seoul-walk-tours.netlify.app',
   areaServed: {
@@ -45,7 +45,7 @@ const structuredData = {
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:site_name" content="서울 워크 투어즈" />
+    <meta property="og:site_name" content="Seoul Walk Tours" />
     <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary" />
@@ -57,7 +57,7 @@ const structuredData = {
   <body class="min-h-screen flex flex-col bg-stone-50 text-stone-900">
     <header class="border-b border-stone-200 bg-stone-50/95 backdrop-blur sticky top-0 z-50">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <a href="/" class="font-bold text-lg tracking-tight">서울 워크 투어즈</a>
+        <a href="/" class="font-bold text-lg tracking-tight">Seoul Walk Tours</a>
         <nav class="hidden sm:flex items-center gap-6 text-sm">
           {navLinks.map((link) => (
             <a href={link.href} class="hover:text-teal-700 transition-colors">{link.label}</a>
@@ -83,9 +83,9 @@ const structuredData = {
 
     <footer class="border-t border-stone-200 bg-stone-100">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 text-sm text-stone-500 flex flex-col gap-2">
-        <p class="font-medium text-stone-700">서울 워크 투어즈 — No Middleman, Priced From the Floor.</p>
+        <p class="font-medium text-stone-700">Seoul Walk Tours — No Middleman, Priced From the Floor.</p>
         <a href="https://www.youtube.com/@slamlog" target="_blank" rel="noopener" class="text-teal-700 hover:underline w-fit">YouTube →</a>
-        <p>&copy; {new Date().getFullYear()} 서울 워크 투어즈. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Seoul Walk Tours. All rights reserved.</p>
       </div>
     </footer>
 
