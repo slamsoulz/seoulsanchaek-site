@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://seoul-walk-tours.netlify.app',
+  site: 'https://seoulwalktours.netlify.app',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
