@@ -4,7 +4,7 @@ category: "walking"
 categoryLabel: "Walking & Transit"
 order: 2
 capacity: "1-9 people · 10+ by inquiry"
-summary: "No car — same personal guide, moving by subway and bus. Half day, full day, or evening — your call."
+summary: "A private Seoul walking tour, solo or small group — same personal guide by subway and bus. Half day, full day, or evening, your call."
 highlight: "The same guide, a lower cost"
 tiers:
   - label: "Half Day"

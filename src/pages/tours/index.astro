@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 const tours = (await getCollection('tours')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout title="Tours" description="Browse tours built around your pace.">
+<BaseLayout title="Tours" description="Private Seoul tours built around your pace — airport transfers, walking tours, private car tours, and multi-day Korea road trips.">
   <section class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
     <h1 class="text-3xl font-bold mb-2">Tours built around your pace</h1>
     <p class="text-stone-600 mb-10">

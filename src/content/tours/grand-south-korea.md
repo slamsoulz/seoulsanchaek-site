@@ -4,7 +4,7 @@ category: "multi-day"
 categoryLabel: "Multi-Day Private Tour"
 order: 8
 capacity: "5–25 guests"
-summary: "A 12-day private journey through Jeju, Suncheon, Busan, Gyeongju, Sokcho, Seoul, DMZ, and Suwon."
+summary: "A 12-day private Korea road trip from Jeju to Seoul, covering Suncheon, Busan, Gyeongju, Sokcho, and the DMZ."
 highlight: "A complete Korea journey from Jeju Island to Seoul"
 image: "/images/tours/korea-12day-main.jpg"
 tiers:

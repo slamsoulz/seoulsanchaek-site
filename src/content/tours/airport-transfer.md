@@ -4,7 +4,7 @@ category: "airport"
 categoryLabel: "Airport"
 order: 1
 capacity: "Up to 3 guests, depending on luggage · inquire to confirm"
-summary: "Pickup or drop-off between the airport and your hotel — no touring included."
+summary: "Private Incheon or Gimpo airport pickup or drop-off to your Seoul hotel — no touring included."
 highlight: "A reliable ride, nothing more"
 tiers:
   - label: "Seoul"

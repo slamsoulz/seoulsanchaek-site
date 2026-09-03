@@ -4,7 +4,7 @@ category: "multi-day"
 categoryLabel: "Multi-Day Private Tour"
 order: 7
 capacity: "5–25 guests"
-summary: "A flexible 7-day private journey through Seoul, DMZ, Suwon, Gyeongju, and Busan."
+summary: "A flexible 7-day private Seoul to Busan tour — a multi-day Korea road trip through DMZ, Suwon, and Gyeongju."
 highlight: "A broad Korea introduction with private transportation and an English-speaking guide"
 image: "/images/tours/korea-7day-main.jpg"
 tiers:
