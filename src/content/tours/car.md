@@ -9,13 +9,16 @@ highlight: "Your course comes first, always"
 tiers:
   - label: "Half Day"
     duration: "4 hours"
-    price: "$300 · approx. ₩410,000 per group"
+    price: "$300 · per private group"
   - label: "Standard"
     duration: "5-7 hours"
-    price: "$500 · approx. ₩683,000 per group"
+    price: "$500 · per private group"
   - label: "Full Day"
     duration: "8-10 hours"
-    price: "$650 · approx. ₩888,000 per group"
+    price: "$650 · per private group"
+  - label: "Additional Hour"
+    duration: "per hour"
+    price: "+$100"
 ---
 
 No fixed route, no landmark checklist. Tell me what you're into — food,
@@ -31,7 +34,7 @@ and know how to adjust on the spot.
 
 - **Included**: vehicle, guide, fuel/tolls/admission within the Seoul metro area (Seoul, Gimpo, Paju)
 - **Not included**: personal meals, admission fees outside the metro area (noted separately)
-- **Extending**: Additional hours are quoted separately based on the route and vehicle schedule.
+- **Extending**: Additional time is $100 per hour.
 - **Beyond the metro area** (Ganghwa, Yangpyeong, Gapyeong, etc.): Quote on request, depending on distance and operating costs.
 - **Group size**: Prices are per private group, not per person. Groups of 4 or more require an inquiry for vehicle and operating arrangements.
 - **Luggage note**: Please inquire with your group size and number of bags to confirm that the vehicle can accommodate everything.
@@ -52,6 +55,10 @@ and operating arrangements. The price may change.
 
 Luggage space is limited. Please send your group size and number of bags before
 booking so we can confirm whether the vehicle is suitable.
+
+### How much does it cost to extend the tour?
+
+Additional time is $100 per hour, added on top of any tier.
 
 ### Can we choose our own itinerary?
 
