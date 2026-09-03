@@ -188,13 +188,17 @@ const productStructuredData = {
     document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((carousel) => {
       const track = carousel.querySelector<HTMLElement>('[data-carousel-track]');
       if (!track) return;
-      const scrollByCard = (dir: 1 | -1) => {
-        const card = track.querySelector<HTMLElement>(':scope > div');
-        const amount = (card?.offsetWidth ?? 300) + 24;
-        track.scrollBy({ left: dir * amount, behavior: 'smooth' });
+      const cards = Array.from(track.querySelectorAll<HTMLElement>(':scope > div'));
+      if (cards.length === 0) return;
+
+      let index = 0;
+      const goTo = (i: number) => {
+        index = (i + cards.length) % cards.length;
+        track.scrollTo({ left: cards[index].offsetLeft, behavior: 'smooth' });
       };
-      carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => scrollByCard(-1));
-      carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => scrollByCard(1));
+
+      carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => goTo(index - 1));
+      carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => goTo(index + 1));
     });
   </script>
 </BaseLayout>
