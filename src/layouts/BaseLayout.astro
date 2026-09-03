@@ -15,7 +15,9 @@ const navLinks = [
 ];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const pageTitle = `${title} | Seoul Walk Tours — Private Tours & Airport Transfers in Seoul`;
+const pageTitle = title === 'Seoul Walk Tours'
+  ? 'Seoul Walk Tours — Private Tours & Airport Transfers in Seoul'
+  : `${title} | Seoul Walk Tours — Private Tours & Airport Transfers in Seoul`;
 const ogImageURL = new URL('/images/hero/4-hanbok-palace-4k.jpg', Astro.site);
 
 const structuredData = {
