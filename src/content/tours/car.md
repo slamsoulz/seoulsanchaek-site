@@ -34,6 +34,7 @@ and know how to adjust on the spot.
 
 - **Included**: vehicle, guide, fuel/tolls/admission within the Seoul metro area (Seoul, Gimpo, Paju)
 - **Not included**: personal meals, admission fees outside the metro area (noted separately)
+- **Start/end point**: Our 4-, 6-, and 8-hour tours begin and end within Seoul. Airport pick-up and drop-off combined with a Seoul tour require a Custom Travel Trip.
 - **Extending**: Additional time is $100 per hour.
 - **Beyond the metro area** (Ganghwa, Yangpyeong, Gapyeong, etc.): Quote on request, depending on distance and operating costs.
 - **Group size**: Prices are per private group, not per person. Groups of 4 or more require an inquiry for vehicle and operating arrangements.
@@ -59,6 +60,12 @@ booking so we can confirm whether the vehicle is suitable.
 ### How much does it cost to extend the tour?
 
 Additional time is $100 per hour, added on top of any tier.
+
+### Can this tour start or end at the airport?
+
+The 4-, 6-, and 8-hour tours begin and end within Seoul. If you'd like airport
+pick-up or drop-off combined with a Seoul tour, that's arranged as a Custom
+Travel Trip — just let us know your flight details when you inquire.
 
 ### Can we choose our own itinerary?
 
