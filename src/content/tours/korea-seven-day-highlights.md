@@ -6,7 +6,7 @@ order: 7
 capacity: "5–25 guests"
 summary: "A flexible 7-day private journey through Seoul, DMZ, Suwon, Gyeongju, and Busan."
 highlight: "A broad Korea introduction with private transportation and an English-speaking guide"
-image: "/images/tours/korea-seven-day-highlights.png"
+image: "/images/tours/korea-7day-main.jpg"
 tiers:
   - label: "Adult"
     duration: "7 days"
