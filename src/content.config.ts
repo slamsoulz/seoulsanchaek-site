@@ -12,6 +12,7 @@ const tours = defineCollection({
     summary: z.string(),
     highlight: z.string(),
     image: z.string().optional(),
+    seoTitle: z.string().optional(),
     tiers: z.array(z.object({
       label: z.string(),
       duration: z.string(),
@@ -28,6 +29,7 @@ const reviews = defineCollection({
       v instanceof Date ? v.toISOString().slice(0, 10) : v
     ),
     image: z.string(),
+    quote: z.string(),
   }),
 });
 

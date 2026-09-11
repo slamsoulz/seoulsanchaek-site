@@ -6,6 +6,7 @@ order: 3
 capacity: "Private group pricing · 4+ or substantial luggage by inquiry"
 summary: "A private Seoul car tour with a personal guide, each tier following a set highlights route — plus custom trips like the DMZ."
 highlight: "A set course, fine-tuned to your day"
+seoTitle: "Seoul Private Car Tour with a Local Guide"
 tiers:
   - label: "Half Day"
     duration: "4 hours"

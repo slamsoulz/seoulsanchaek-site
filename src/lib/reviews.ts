@@ -4,6 +4,7 @@ export interface Review {
   src: string;
   date: string;
   label: string;
+  quote: string;
 }
 
 export async function getReviews(): Promise<Review[]> {
@@ -14,5 +15,6 @@ export async function getReviews(): Promise<Review[]> {
       src: entry.data.image,
       date: entry.data.date,
       label: entry.data.label,
+      quote: entry.data.quote,
     }));
 }

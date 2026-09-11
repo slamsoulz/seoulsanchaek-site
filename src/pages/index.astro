@@ -11,7 +11,7 @@ const tours = (await getCollection('tours')).sort((a, b) => a.data.order - b.dat
 const reviews = (await getReviews()).slice(0, 5);
 ---
 
-<BaseLayout title="Seoul Walk Tours" description="Seoul Walk Tours — an independent, English-speaking private tour guide in Seoul. Private car tours, transit tours, and airport transfers, guided personally with honest, no-hidden-fee pricing.">
+<BaseLayout title="Seoul Private Tours with a Local Guide" description="Seoul Walk Tours — an independent, English-speaking private tour guide in Seoul. Private car tours, transit tours, and airport transfers, guided personally with honest, no-hidden-fee pricing.">
   <Hero />
   <StrengthBoxes />
 
@@ -104,7 +104,7 @@ const reviews = (await getReviews()).slice(0, 5);
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {reviews.map((r) => (
           <a href="/reviews" class="block border border-stone-200 rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
-            <img src={r.src} alt="Guest review" class="w-full h-auto" />
+            <img src={r.src} alt={`Message from ${r.label}: ${r.quote}`} class="w-full h-auto" />
           </a>
         ))}
       </div>

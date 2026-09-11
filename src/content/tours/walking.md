@@ -6,6 +6,7 @@ order: 2
 capacity: "1-9 people · 10+ by inquiry"
 summary: "A private Seoul walking tour, solo or small group — same personal guide by subway and bus. Half day, full day, or evening, your call."
 highlight: "The same guide, a lower cost"
+seoTitle: "Private Seoul Walking & Transit Tour"
 tiers:
   - label: "Half Day"
     duration: "4 hours"

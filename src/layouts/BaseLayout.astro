@@ -4,9 +4,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title, description = 'Seoul Walk Tours — private car, transit tour, and airport transfer services in Seoul, guided personally and priced honestly.' } = Astro.props;
+const { title, description = 'Seoul Walk Tours — private car, transit tour, and airport transfer services in Seoul, guided personally and priced honestly.', noindex = false } = Astro.props;
 
 const navLinks = [
   { href: '/guide', label: 'Guide' },
@@ -15,9 +16,7 @@ const navLinks = [
 ];
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const pageTitle = title === 'Seoul Walk Tours'
-  ? 'Seoul Walk Tours — Private Tours & Airport Transfers in Seoul'
-  : `${title} | Seoul Walk Tours`;
+const pageTitle = `${title} | Seoul Walk Tours`;
 const ogImageURL = new URL('/images/hero/4-hanbok-palace-4k.jpg', Astro.site);
 
 const structuredData = {
@@ -45,6 +44,7 @@ const structuredData = {
     <meta name="google-site-verification" content="Un1bhlyTT8LxFZZ2wGWjHwzMZ7ObioA5ohwyhDJDPkQ" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
 

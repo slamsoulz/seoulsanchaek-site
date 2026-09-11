@@ -6,6 +6,7 @@ order: 1
 capacity: "Up to 3 guests, depending on luggage · inquire to confirm"
 summary: "Private Incheon or Gimpo airport pickup or drop-off to your Seoul hotel — no touring included."
 highlight: "A reliable ride, nothing more"
+seoTitle: "Incheon & Gimpo Airport Transfers to Seoul"
 tiers:
   - label: "Seoul"
     duration: ""
