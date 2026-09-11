@@ -29,10 +29,11 @@ and I'll build the day around it — half day or full day, your call.
 - **Group size**: 1 guest is $100; 2–9 guests are $70 per person. Groups of 10 or more require an inquiry.
 - **Additional time**: After the 4-hour base, add $20 per person per hour for all groups. This applies to 5–7 hour and 8-hour tours.
 
-## Example Half-Day Routes
+## Half-Day Courses
 
-These are examples, not fixed itineraries — I build the day around what you
-want to see. Each runs four hours, on foot with subway and bus links.
+Three set courses, four hours each, on foot with subway and bus links. The
+order holds on most days, but I adjust as we go — for weather, closing days,
+crowds, and anything you want to spend longer on.
 
 **Route A — Palaces and old alleys**
 
@@ -67,23 +68,25 @@ give you the city for free.
 - **0:00** Starfield Library and COEX. Start at Samseong Stn, Line 2
 - **0:50** Bongeunsa Temple
 - **1:50** Garosu-gil
-- **3:00** Banpo Hangang Park, finishing at Sinbanpo Stn, Line 9
+- **3:00** Jamwon Hangang Park by the river, finishing at Sinsa Stn, Line 3
 
 Modern Seoul, with a temple founded in 794 sitting among the office towers.
-Less walking than the other two, more browsing.
+Less walking than the other two, more browsing. From Garosu-gil it is about
+twenty minutes down to the river on foot, or a short bus ride if you would
+rather save your legs.
 
 ## FAQs
 
 ### What places can we visit?
 
-We won't visit all of these in one tour — based on your interests and
-available time, we'll pick a handful from places like Gyeongbokgung Palace,
-Gwanghwamun Square, Cheonggyecheon Stream, Myeongdong, Dongdaemun Design Plaza
-(DDP), N Seoul Tower and Namsan Park, Bukchon Hanok Village, Insadong, COEX
-Library, Bongeunsa, Gangnam, Hangang Parks, traditional markets, and local
-neighborhoods. We try to reflect what you want as closely as possible, and
-the guide fine-tunes the exact spots and order around the route and time
-available.
+Pick one of the three courses above, or build your own from the places you
+want to see. The usual candidates are Gyeongbokgung Palace, Gwanghwamun
+Square, Cheonggyecheon Stream, Myeongdong, Dongdaemun Design Plaza (DDP),
+N Seoul Tower and Namsan Park, Bukchon Hanok Village, Insadong, Ikseondong,
+Haebangchon, Starfield Library, Bongeunsa, Garosu-gil, the Hangang parks,
+traditional markets, and residential neighborhoods. Four hours fits four or
+five of them, so tell me what matters most and I'll shape the route and order
+around it.
 
 ### Is the itinerary fixed?
 
