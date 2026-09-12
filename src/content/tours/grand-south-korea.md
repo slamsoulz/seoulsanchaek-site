@@ -10,7 +10,7 @@ image: "/images/tours/korea-12day-main.jpg"
 tiers:
   - label: "Adult"
     duration: "12 days · 11 nights"
-    price: "From $8,700"
+    price: "$8,700 per adult"
   - label: "Child"
     duration: "12 days · 11 nights"
     price: "Quote on request"
@@ -63,9 +63,10 @@ before booking.
 
 ## Cost
 
-Prices start from $8,700 per adult. Child pricing is quoted on request. The final quote depends on group size,
-season, hotels, flights, vehicle, meals, admissions, and the final itinerary. International airfare, travel
-insurance, personal expenses, tips, visa fees, and optional activities are
+The fixed price is US $8,700 per adult for groups of 5–25 guests.
+A minimum of 5 guests is required. Child pricing is quoted on request.
+
+International airfare, travel insurance, personal expenses, tips, visa fees, and optional activities are
 excluded unless stated.
 
 ## FAQs

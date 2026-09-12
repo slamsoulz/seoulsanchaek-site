@@ -77,7 +77,6 @@ const galleryImages = galleryByTour[tour.id] ?? [
 const firstTier = tour.data.tiers[0];
 const priceMatch = firstTier?.price.match(/[\d,]+(\.\d+)?/);
 const firstPrice = priceMatch ? priceMatch[0].replace(/,/g, '') : undefined;
-const isStartingPrice = /from/i.test(firstTier?.price ?? '');
 
 const productStructuredData = {
   '@context': 'https://schema.org',
@@ -89,10 +88,10 @@ const productStructuredData = {
   ...(firstPrice
     ? {
         offers: {
-          '@type': isStartingPrice ? 'AggregateOffer' : 'Offer',
+          '@type': 'Offer',
           priceCurrency: 'USD',
-          [isStartingPrice ? 'lowPrice' : 'price']: firstPrice,
-          description: [firstTier.label, firstTier.duration, firstTier.price]
+          price: firstPrice,
+          description: [firstTier.label, firstTier.duration, firstTier.price, tour.data.capacity]
             .filter(Boolean)
             .join(' · '),
           url: new URL(`/tours/${tour.id}`, Astro.site).toString(),

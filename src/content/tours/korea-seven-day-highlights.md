@@ -11,7 +11,7 @@ image: "/images/tours/korea-7day-main.jpg"
 tiers:
   - label: "Adult"
     duration: "7 days"
-    price: "From $3,900"
+    price: "$3,900 per adult"
   - label: "Child"
     duration: "7 days"
     price: "Quote on request"
@@ -57,9 +57,10 @@ The final route and intercity transfers are confirmed before booking.
 
 ## Cost
 
-Prices start from $3,900 per adult. Child pricing is quoted on request. The final quote depends on group size,
-season, hotel, vehicle, meals, admissions, and final route. International
-airfare, travel insurance, personal expenses, tips, visa fees, and optional
+The fixed price is US $3,900 per adult for groups of 5–25 guests.
+A minimum of 5 guests is required. Child pricing is quoted on request.
+
+International airfare, travel insurance, personal expenses, tips, visa fees, and optional
 activities are excluded unless stated.
 
 ## FAQs
