@@ -81,7 +81,7 @@ const isStartingPrice = /from/i.test(firstTier?.price ?? '');
 
 const productStructuredData = {
   '@context': 'https://schema.org',
-  '@type': isStartingPrice ? 'Service' : 'Product',
+  '@type': 'Product',
   brand: { '@type': 'Brand', name: 'Seoul Walk Tours' },
   name: tour.data.title,
   description: tour.data.summary,
@@ -89,16 +89,9 @@ const productStructuredData = {
   ...(firstPrice
     ? {
         offers: {
-          '@type': 'Offer',
+          '@type': isStartingPrice ? 'AggregateOffer' : 'Offer',
           priceCurrency: 'USD',
-          // A quote starting at this amount is not a fixed-price offer.
-          ...(isStartingPrice
-            ? { priceSpecification: {
-                '@type': 'PriceSpecification',
-                minPrice: Number(firstPrice),
-                priceCurrency: 'USD',
-              } }
-            : { price: firstPrice }),
+          [isStartingPrice ? 'lowPrice' : 'price']: firstPrice,
           description: [firstTier.label, firstTier.duration, firstTier.price]
             .filter(Boolean)
             .join(' · '),
