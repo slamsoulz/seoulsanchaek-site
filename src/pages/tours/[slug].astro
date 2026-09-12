@@ -81,16 +81,24 @@ const isStartingPrice = /from/i.test(firstTier?.price ?? '');
 
 const productStructuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Product',
+  '@type': isStartingPrice ? 'Service' : 'Product',
+  brand: { '@type': 'Brand', name: 'Seoul Walk Tours' },
   name: tour.data.title,
   description: tour.data.summary,
   image: new URL(galleryImages[0].src, Astro.site).toString(),
   ...(firstPrice
     ? {
         offers: {
-          '@type': isStartingPrice ? 'AggregateOffer' : 'Offer',
+          '@type': 'Offer',
           priceCurrency: 'USD',
-          [isStartingPrice ? 'lowPrice' : 'price']: firstPrice,
+          // A quote starting at this amount is not a fixed-price offer.
+          ...(isStartingPrice
+            ? { priceSpecification: {
+                '@type': 'PriceSpecification',
+                minPrice: Number(firstPrice),
+                priceCurrency: 'USD',
+              } }
+            : { price: firstPrice }),
           description: [firstTier.label, firstTier.duration, firstTier.price]
             .filter(Boolean)
             .join(' · '),
